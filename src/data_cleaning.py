@@ -272,6 +272,37 @@ def detect_implicit_duplicates_token(df, include=None, exclude=None, fuzzy_thres
 
     return None
 
+# Function to normalize text, mostly used for "detect_implicit_duplicates_fuzzy"
+def normalize_string(text):
+    """
+    Normalize a text string for comparison and deduplication.
+
+    This function performs the following cleaning steps:
+    - Converts the input to a string and removes accents (e.g., 'é' → 'e')
+    - Converts all characters to lowercase
+    - Removes punctuation and non-alphanumeric characters
+    - Collapses multiple whitespace into a single space
+    - Strips leading and trailing whitespace
+
+    Parameters
+    ----------
+    text : str or object
+        The input value to normalize. Can be a string, number, or None/NaN.
+
+    Returns
+    -------
+    str
+        A normalized version of the input string. Returns an empty string if input is null.
+    """
+    if pd.isna(text):
+        return ""
+    text = unicodedata.normalize('NFKD', str(text)).encode(
+        'ascii', 'ignore').decode('utf-8')
+    text = text.lower()
+    text = re.sub(r'[^\w\s]', '', text)
+    text = re.sub(r'\s+', ' ', text).strip()
+    return text
+
 # Function to detect implicit duplicates
 def detect_implicit_duplicates_fuzzy(df, column, threshold=90, show_progress=True):
     """
