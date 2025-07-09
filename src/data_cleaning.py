@@ -38,7 +38,7 @@ def check_existing_missing_values(df):
                 HTML(f"&emsp;Matched non-standard values: {list(matches)}"))
         else:
             display(
-                HTML(f"> Missing values in column <i>'{column}'</i>: <b>None</b>"))
+                HTML(f"> Missing values in column <i>'{column}'</i>: None"))
 
     print()
 
@@ -74,6 +74,48 @@ def replace_missing_values(df, include=None, exclude=None):
 
     return df
 
+# function for displaying the percentage of mising values in a Dataset
+def missing_values_rate(df, include=None, exclude=None):
+    
+    """
+    Displays the percentage of missing values for specified columns in a DataFrame.
+
+    Parameters:
+    ----------
+    df : pandas.DataFrame
+        The DataFrame to analyze.
+
+    include : list, optional
+        List of column names to include in the analysis. If None, all columns not in `exclude` are considered.
+
+    exclude : list, optional
+        List of column names to exclude from the analysis. Default is an empty list.
+
+    Returns:
+    -------
+    None
+        Displays HTML output in a Jupyter Notebook environment.
+    """
+    
+    if exclude is None:
+        exclude = []
+
+    if include is None:
+        available_columns = [col for col in df.columns if col not in exclude]
+    else:
+        available_columns = [col for col in include if col not in exclude]
+
+    for column in available_columns:
+        total_values = len(df[column])
+        if total_values == 0:
+            percentage = 0
+        else:
+            missing_values = df[column].isna().sum()
+            percentage = (missing_values / total_values) * 100
+
+        display(HTML(f"> Percentage of missing values for column <i>'{column}'</i>: <b>{percentage:.2f}</b> %<br>"))
+        display(HTML(f">    Total values: {df[column].shape[0]}<br>   > Missing values: {df[column].isna().sum()}<br><br>"))
+    
 # Function to normalize string formatting in object-type columns
 def normalize_string_format(df, include=None, exclude=None):
     """
@@ -407,19 +449,31 @@ def convert_object_to_numeric(df, type=None, include=None, exclude=None):
         available_columns = [col for col in include if col not in exclude]
 
     for column in available_columns:
+        df[column] = df[column].astype(str).str.replace(",", ".", regex=False).str.strip()
+        
         # Integer conversion
         if type == 'integer':
             try:
                 if np.array_equal(df[column], df[column].astype(int)):
                     df[column] = pd.to_numeric(df[column], downcast='integer', errors='coerce')
                 else:
-                    find_errors_to_numeric(df, column)
+                    find_fail_conversion_to_numeric(df, column)
             except Exception:
-                find_errors_to_numeric(df, column)
+                find_fail_conversion_to_numeric(df, column)
+        elif type == 'Int64':
+            try:
+                if np.array_equal(df[column], df[column].astype("Int64")):
+                    df[column] = pd.to_numeric(df[column], errors='coerce').astype("Int64")
+                else:
+                    find_fail_conversion_to_numeric(df, column)
+            except Exception:
+                find_fail_conversion_to_numeric(df, column)
 
         # Float conversion
         elif type == 'float':
             df[column] = pd.to_numeric(df[column], downcast='float', errors='coerce')
+        elif type == 'Float64':
+            df[column] = pd.to_numeric(df[column], errors='coerce').astype("Float64")
 
         # Auto conversion
         else:
@@ -427,10 +481,10 @@ def convert_object_to_numeric(df, type=None, include=None, exclude=None):
                 if np.array_equal(df[column], df[column].astype(int)):
                     df[column] = pd.to_numeric(df[column], errors='coerce')
                 else:
-                    find_errors_to_numeric(df, column)
+                    find_fail_conversion_to_numeric(df, column)
                     df[column] = pd.to_numeric(df[column], errors='coerce')
             except Exception:
-                find_errors_to_numeric(df, column)
+                find_fail_conversion_to_numeric(df, column)
                 df[column] = pd.to_numeric(df[column], errors='coerce')
 
     return df
@@ -545,3 +599,12 @@ def convert_numday_strday(df, include=None, exclude=None):
             display(HTML(f"> Column '<i>{column}</i>' is <b>not numeric</b>. Skipping..."))
 
     return df
+
+# Show available Timezones
+
+# import pytz
+# pytz.all_timezones[:10]  # shows first 10
+
+# Python 3.9 +
+# from zoneinfo import available_timezones
+# sorted(available_timezones())[:10]

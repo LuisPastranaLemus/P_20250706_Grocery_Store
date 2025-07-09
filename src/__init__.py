@@ -11,6 +11,7 @@ try:
 
     from .data_cleaning import (check_existing_missing_values,
                                 replace_missing_values,
+                                missing_values_rate,
                                 normalize_string_format,
                                 normalize_columns_headers_format,
                                 detect_implicit_duplicates_token,
@@ -62,6 +63,7 @@ __all__ = ['load_dataset_from_zip',
 
            'check_existing_missing_values',
            'replace_missing_values',
+           'missing_values_rate',
            'normalize_string_format',
            'normalize_columns_headers_format',
            'detect_implicit_duplicates_token',
