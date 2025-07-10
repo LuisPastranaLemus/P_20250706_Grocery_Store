@@ -6,7 +6,7 @@ employee_id,employee_name,region,total_sales,effectiveness
 5,zachary_bond,West,74696.77,0.65
 6,joanna_roberts,North,28973.34,0.69
 7,jessica_williams,East,10295.13,0.68
-8,mitchell_thomas,East,71050.8,0.9
+8,mitchell_thomas,East,71050.8,0.0141066053741298
 9,calvin_nguyen,South,44159.28,0.7
 10,sarah_jones,North,44059.92,0.77
 11,michelle_roberts,North,30947.42,0.92
@@ -33,8 +33,8 @@ employee_id,employee_name,region,total_sales,effectiveness
 32,lisa_potts,East,72684.68,0.76
 33,dr_scott_grant,East,24360.67,0.79
 34,thomas_vega,North,61649.49,0.81
-35,melissa_rogers,North,27109.95,0.9
-36,james_gibson,North,83111.15,0.82
+35,melissa_rogers,North,27109.95,0.0962241674362765
+36,james_gibson,North,285711.5944624418,0.82
 37,sonya_donaldson,South,76720.7,0.7
 38,bethany_white,West,96073.51,0.62
 39,james_johnson,North,56564.59,0.83
@@ -161,7 +161,7 @@ employee_id,employee_name,region,total_sales,effectiveness
 160,jennifer_ruiz,South,78128.02,0.88
 161,anthony_stephenson,South,42620.46,0.82
 162,alexander_marshall,South,12790.61,0.64
-163,nicole_smith,North,28044.99,0.77
+163,nicole_smith,North,106089.69665177644,0.77
 164,emma_ward,West,33787.86,0.9
 165,megan_manning,East,92164.8,0.89
 166,richard_williams,North,61784.15,0.78
@@ -216,7 +216,7 @@ employee_id,employee_name,region,total_sales,effectiveness
 215,nancy_bates,East,23034.07,0.68
 216,gary_powers,South,77252.83,0.61
 217,wayne_russo,West,56633.57,0.95
-218,ryan_hansen,East,38642.52,0.94
+218,ryan_hansen,East,38642.52,0.0333137338889244
 219,donna_johnson,West,20154.68,0.76
 220,anthony_anderson,East,26489.07,0.87
 221,william_clark,North,80040.58,0.93
@@ -259,7 +259,7 @@ employee_id,employee_name,region,total_sales,effectiveness
 258,kristen_gonzales,South,73313.4,0.75
 259,angela_patterson,West,41159.97,0.69
 260,bonnie_rose,East,92541.21,0.8
-261,taylor_armstrong,East,15164.07,0.94
+261,taylor_armstrong,East,31895.270194586035,0.94
 262,james_jones,South,81193.69,0.79
 263,beverly_smith,South,78971.72,0.72
 264,rachel_simpson,South,97479.56,0.78
@@ -269,7 +269,7 @@ employee_id,employee_name,region,total_sales,effectiveness
 268,monique_gutierrez,South,58232.56,0.85
 269,christopher_williams,East,46117.11,0.61
 270,trevor_simpson,East,26487.32,0.66
-271,susan_perkins,West,23865.54,0.75
+271,susan_perkins,West,23865.54,0.0533497958727405
 272,joseph_newton,South,17749.02,0.79
 273,pamela_smith,West,21750.84,0.78
 274,charles_sharp,West,18225.14,0.79
@@ -430,7 +430,7 @@ employee_id,employee_name,region,total_sales,effectiveness
 429,rachel_smith,South,92751.44,0.62
 430,bonnie_cooper,North,12011.93,0.9
 431,brandi_baker,West,38778.33,0.88
-432,janet_hansen,North,25172.49,0.86
+432,janet_hansen,North,25172.49,0.0140671906057974
 433,sabrina_turner,West,69108.31,0.79
 434,jamie_mckinney,East,78738.71,0.92
 435,harry_warren,East,36982.52,0.73
@@ -561,7 +561,7 @@ employee_id,employee_name,region,total_sales,effectiveness
 560,lauren_conner,South,89428.7,0.89
 561,yesenia_johnson,East,90349.95,0.93
 562,jenny_stewart,North,12789.61,0.7
-563,jerome_klein,South,28844.95,0.8
+563,jerome_klein,South,100921.21430400456,0.8
 564,andrew_ochoa,West,98932.1,0.63
 565,jessica_stokes,North,72467.3,0.66
 566,sabrina_berg,North,91405.3,0.69
@@ -595,7 +595,7 @@ employee_id,employee_name,region,total_sales,effectiveness
 594,rachel_johnson_md,South,33169.11,0.75
 595,janice_shannon,West,47742.04,0.88
 596,misty_carter,West,20669.89,0.81
-597,toni_hoffman,South,59507.21,0.6
+597,toni_hoffman,South,59507.21,0.0645323780336069
 598,breanna_johnson,West,64585.78,0.83
 599,caitlyn_williams,South,75649.3,0.71
 600,christopher_hardin,North,76748.39,0.72
@@ -639,7 +639,7 @@ employee_id,employee_name,region,total_sales,effectiveness
 638,jeremy_decker,South,23106.4,0.83
 639,bryan_king,North,39294.73,0.75
 640,amanda_erickson,South,55430.34,0.84
-641,alexandra_ho,East,64863.64,0.81
+641,alexandra_ho,East,64863.64,0.0257189436157264
 642,rachel_davenport,North,51737.37,0.89
 643,brenda_moore,South,50276.55,0.62
 644,julia_sampson,East,98236.97,0.89
@@ -655,9 +655,9 @@ employee_id,employee_name,region,total_sales,effectiveness
 654,joseph_bush,North,97481.11,0.72
 655,brian_jackson,West,86619.0,0.6
 656,danielle_jordan,South,47377.75,0.61
-657,adam_moon,East,51828.09,0.76
+657,adam_moon,East,104874.5622508378,0.76
 658,frank_patterson,East,79884.12,0.79
-659,danielle_gill,East,46156.18,0.73
+659,danielle_gill,East,46156.18,0.0937923597488472
 660,gary_tran,South,76647.71,0.68
 661,carla_holloway,South,42840.71,0.71
 662,cathy_cantrell,West,54133.86,0.63
@@ -717,10 +717,10 @@ employee_id,employee_name,region,total_sales,effectiveness
 716,douglas_moody,East,30624.73,0.65
 717,james_wong,West,84370.58,0.82
 718,matthew_murphy,North,64132.46,0.79
-719,dylan_lewis,West,31951.55,0.74
+719,dylan_lewis,West,78161.23491781119,0.74
 720,teresa_hamilton,East,15589.82,0.86
 721,mr_jorge_webb_phd,East,31605.17,0.8
-722,anthony_mcconnell_jr,West,95953.31,0.74
+722,anthony_mcconnell_jr,West,95953.31,0.0520510156070454
 723,sandra_mccullough,North,39104.26,0.8
 724,jenna_brooks,East,80974.64,0.71
 725,cynthia_weeks,South,15275.52,0.77
@@ -738,9 +738,9 @@ employee_id,employee_name,region,total_sales,effectiveness
 737,jared_klein,West,98050.73,0.75
 738,cynthia_crosby,North,37634.49,0.85
 739,erica_davis,East,27762.51,0.6
-740,joshua_hines,North,82681.33,0.81
+740,joshua_hines,North,82681.33,0.0999667452521765
 741,susan_rios,East,22918.48,0.81
-742,kenneth_nelson,East,65980.05,0.71
+742,kenneth_nelson,East,244232.598425088,0.71
 743,susan_gomez,South,68790.49,0.89
 744,regina_anthony,West,56362.59,0.94
 745,amanda_reese,West,48247.16,0.94
@@ -810,9 +810,9 @@ employee_id,employee_name,region,total_sales,effectiveness
 809,lance_grant,West,12466.0,0.6
 810,timothy_tyler,West,56806.59,0.73
 811,courtney_craig,East,17897.27,0.95
-812,briana_mcdonald,East,96889.79,0.9
+812,briana_mcdonald,East,216686.32480735783,0.9
 813,alexander_west,North,39681.39,0.89
-814,amanda_carroll,South,92409.76,0.76
+814,amanda_carroll,South,247344.62720424397,0.76
 815,jordan_jenkins,North,37004.05,0.6
 816,mrs_leslie_adkins,South,54719.97,0.79
 817,taylor_graham,North,34218.2,0.77
@@ -855,7 +855,7 @@ employee_id,employee_name,region,total_sales,effectiveness
 854,kimberly_myers,South,44890.84,0.8
 855,angela_garza,East,26549.17,0.88
 856,tiffany_moore,North,29412.53,0.72
-857,barbara_garza_md,North,29103.05,0.61
+857,barbara_garza_md,North,79927.71405111624,0.61
 858,jordan_olson,West,24492.84,0.6
 859,aaron_kim,North,88495.68,0.65
 860,amanda_brown,East,23413.11,0.79
@@ -1001,7 +1001,7 @@ employee_id,employee_name,region,total_sales,effectiveness
 1000,gregory_webster,South,84881.27,0.92
 1001,cristian_vaughan,West,85519.59,0.69
 1002,jeanette_gutierrez,North,51162.08,0.88
-1003,kristina_allen,South,24664.67,0.74
+1003,kristina_allen,South,79682.94239759685,0.74
 1004,james_cooper,East,58714.54,0.62
 1005,andrew_wells,South,66287.44,0.61
 1006,sonya_dominguez,South,91647.15,0.85
@@ -1057,11 +1057,11 @@ employee_id,employee_name,region,total_sales,effectiveness
 1056,tammy_hernandez_phd,East,50155.62,0.64
 1057,madison_wagner,South,34316.78,0.68
 1058,andrew_flynn,North,50543.46,0.65
-1059,erin_velez,West,39154.33,0.74
+1059,erin_velez,West,39154.33,0.0949057621773685
 1060,lisa_frey,North,95513.43,0.8
 1061,alec_clay,North,56959.97,0.76
 1062,natalie_brown_dds,South,60123.18,0.86
-1063,jordan_clark,North,94899.63,0.91
+1063,jordan_clark,North,94899.63,0.0704187943962515
 1064,patrick_stark,North,70703.14,0.95
 1065,shelley_rivera,South,17241.05,0.87
 1066,alan_turner,North,12705.29,0.79
@@ -1155,10 +1155,10 @@ employee_id,employee_name,region,total_sales,effectiveness
 1154,steven_sharp,South,27164.07,0.63
 1155,timothy_park,North,72245.64,0.73
 1156,daniel_lynch,North,58744.76,0.7
-1157,mary_steele,West,35101.71,0.63
+1157,mary_steele,West,82212.05732099741,0.63
 1158,donald_shelton,West,56277.21,0.79
 1159,thomas_hayes,East,21078.57,0.67
-1160,heather_chan,North,76264.51,0.63
+1160,heather_chan,North,76264.51,0.0601211520917241
 1161,brian_martin,North,58657.17,0.63
 1162,amanda_fitzgerald,North,74507.12,0.61
 1163,michele_smith,East,35457.48,0.86
@@ -1178,7 +1178,7 @@ employee_id,employee_name,region,total_sales,effectiveness
 1177,tanya_sanford,East,33263.63,0.73
 1178,martin_stevenson,West,20772.05,0.81
 1179,linda_mcintosh,South,25278.7,0.91
-1180,jenna_pittman,South,86950.77,0.71
+1180,jenna_pittman,South,304984.18234471616,0.71
 1181,dawn_campos,South,92790.43,0.84
 1182,brent_schneider,North,93572.59,0.91
 1183,mrs_melissa_gray,West,18340.17,0.77
@@ -1275,7 +1275,7 @@ employee_id,employee_name,region,total_sales,effectiveness
 1274,michelle_cunningham,West,43629.27,0.76
 1275,nancy_castaneda,East,96510.39,0.66
 1276,carlos_schneider,South,72350.63,0.89
-1277,lucas_thompson,South,87030.88,0.65
+1277,lucas_thompson,South,87030.88,0.0475111638181204
 1278,denise_villarreal,North,58758.05,0.93
 1279,lindsey_wood,West,33753.01,0.95
 1280,bridget_castro,East,24433.69,0.74
@@ -1315,7 +1315,7 @@ employee_id,employee_name,region,total_sales,effectiveness
 1314,john_howe,North,54875.71,0.76
 1315,michelle_fitzgerald,South,68914.87,0.65
 1316,william_parks,West,15800.13,0.63
-1317,lisa_scott,East,91114.45,0.73
+1317,lisa_scott,East,91114.45,0.0351636245504193
 1318,nicholas_sullivan,East,35664.26,0.74
 1319,kevin_williams,North,99165.79,0.87
 1320,amy_jones,East,32965.34,0.84
@@ -1397,12 +1397,12 @@ employee_id,employee_name,region,total_sales,effectiveness
 1396,deborah_barker,West,32636.3,0.82
 1397,alexis_miller,South,90719.46,0.88
 1398,william_stevens,East,35805.12,0.8
-1399,tonya_brown,South,75158.48,0.78
+1399,tonya_brown,South,75158.48,0.0397037695973527
 1400,alexa_thomas,South,34125.13,0.68
 1401,bryan_norton,South,78955.46,0.86
 1402,joshua_oliver,South,40297.09,0.7
 1403,emily_kelley,West,47325.84,0.72
-1404,marissa_webb,South,88638.72,0.66
+1404,marissa_webb,South,88638.72,0.0343651160992891
 1405,raven_price,North,65240.36,0.75
 1406,zachary_rogers,East,94827.96,0.62
 1407,john_simon,East,28564.04,0.83
@@ -1492,7 +1492,7 @@ employee_id,employee_name,region,total_sales,effectiveness
 1491,rachel_bender,West,84788.41,0.79
 1492,ronald_martinez,North,14421.28,0.8
 1493,trevor_walters,South,44926.08,0.64
-1494,alicia_johnson,South,78488.24,0.94
+1494,alicia_johnson,South,78488.24,0.0997228317234744
 1495,hannah_rich,East,91701.9,0.83
 1496,danny_travis,South,62305.94,0.69
 1497,peter_mendez,East,86141.31,0.76
@@ -1558,7 +1558,7 @@ employee_id,employee_name,region,total_sales,effectiveness
 1557,jason_english,East,63996.26,0.69
 1558,kelsey_munoz,North,57357.34,0.76
 1559,james_peters,West,88189.46,0.95
-1560,jon_campbell,South,37330.54,0.92
+1560,jon_campbell,South,37330.54,0.0346055848872144
 1561,charles_jacobs,East,90934.45,0.61
 1562,mr_johnny_aguilar_dvm,North,32718.86,0.9
 1563,dale_harrison,West,88233.45,0.74
@@ -1570,7 +1570,7 @@ employee_id,employee_name,region,total_sales,effectiveness
 1569,david_ramirez,South,75416.66,0.75
 1570,lauren_anderson,North,35443.2,0.87
 1571,hunter_brooks,East,56795.17,0.83
-1572,kathryn_ho,South,71502.48,0.63
+1572,kathryn_ho,South,71502.48,0.0756192787667513
 1573,nicholas_thomas,South,50293.74,0.63
 1574,kathy_roberts,West,49484.85,0.92
 1575,rebecca_bradley,North,96781.14,0.95
@@ -1628,7 +1628,7 @@ employee_id,employee_name,region,total_sales,effectiveness
 1627,kelsey_ray,South,91797.62,0.75
 1628,jennifer_jones,West,53464.16,0.91
 1629,thomas_browning,East,19014.33,0.68
-1630,john_gutierrez,North,52929.95,0.79
+1630,john_gutierrez,North,135139.66239695024,0.79
 1631,marilyn_zavala,South,80441.46,0.89
 1632,amanda_gilbert,South,38351.76,0.83
 1633,melissa_arias,South,90464.23,0.88
@@ -1692,7 +1692,7 @@ employee_id,employee_name,region,total_sales,effectiveness
 1691,nathan_johnson,South,62593.29,0.68
 1692,corey_arias_jr,West,59382.85,0.86
 1693,suzanne_williams,East,92569.59,0.81
-1694,jennifer_ortiz,East,38146.45,0.63
+1694,jennifer_ortiz,East,146798.72202783354,0.63
 1695,robin_henderson,North,25761.49,0.83
 1696,mr_patrick_chapman_md,South,65976.51,0.8
 1697,dennis_phillips,West,70565.37,0.66
@@ -1794,7 +1794,7 @@ employee_id,employee_name,region,total_sales,effectiveness
 1793,travis_garcia,South,88387.91,0.64
 1794,ebony_miller,West,99495.7,0.61
 1795,amy_cain,West,88175.87,0.76
-1796,keith_roberts,North,41362.63,0.87
+1796,keith_roberts,North,154181.17266339046,0.87
 1797,michael_weaver,West,46985.56,0.7
 1798,jesse_hamilton,West,95172.32,0.87
 1799,joseph_padilla,South,53721.7,0.91
@@ -1831,7 +1831,7 @@ employee_id,employee_name,region,total_sales,effectiveness
 1830,heather_phillips,North,60213.52,0.81
 1831,sharon_frost,East,89817.4,0.64
 1832,felicia_booker,East,33875.45,0.88
-1833,john_jones,West,29366.36,0.87
+1833,john_jones,West,70526.45494440012,0.87
 1834,paige_kelley,North,97016.98,0.92
 1835,lauren_walton,South,38096.47,0.95
 1836,jared_morales,East,10298.06,0.93
@@ -1857,7 +1857,7 @@ employee_id,employee_name,region,total_sales,effectiveness
 1856,jennifer_butler,North,89228.22,0.62
 1857,vanessa_friedman,East,45054.23,0.95
 1858,jordan_smith,West,89730.44,0.9
-1859,rachel_morgan,East,84279.11,0.81
+1859,rachel_morgan,East,254252.540722098,0.81
 1860,tony_miller,West,78727.54,0.77
 1861,john_hunter,East,19885.86,0.6
 1862,shannon_briggs,South,20379.97,0.89
@@ -1878,7 +1878,7 @@ employee_id,employee_name,region,total_sales,effectiveness
 1877,brenda_sanchez,South,12345.04,0.75
 1878,andrew_cowan,South,19163.33,0.7
 1879,elizabeth_russell,South,72742.65,0.67
-1880,kim_lewis,East,23385.42,0.74
+1880,kim_lewis,East,23385.42,0.0913249458578501
 1881,emily_singh,East,37781.37,0.84
 1882,luke_wheeler,East,85687.18,0.65
 1883,christine_williams,South,25271.76,0.69
@@ -1905,7 +1905,7 @@ employee_id,employee_name,region,total_sales,effectiveness
 1904,patricia_martinez,North,44404.07,0.84
 1905,travis_gomez,East,75885.33,0.74
 1906,victoria_west,East,89855.61,0.8
-1907,katie_preston,North,53572.67,0.83
+1907,katie_preston,North,212858.2325453319,0.83
 1908,amy_bailey,South,91190.82,0.91
 1909,melissa_stevens,North,21443.03,0.77
 1910,dawn_johnston,West,34230.64,0.93
@@ -1950,12 +1950,12 @@ employee_id,employee_name,region,total_sales,effectiveness
 1949,jennifer_roberts,East,71183.25,0.7
 1950,nathaniel_rowe,West,39356.21,0.66
 1951,jeffrey_peterson,South,65318.69,0.78
-1952,mary_tucker,West,34950.97,0.73
+1952,mary_tucker,West,98815.44246389274,0.73
 1953,wendy_hill_phd,East,11478.9,0.86
 1954,courtney_miller,East,52448.18,0.93
 1955,james_lopez,West,66561.45,0.6
 1956,donna_butler,East,83236.51,0.89
-1957,jacqueline_brady,North,88821.72,0.61
+1957,jacqueline_brady,North,88821.72,0.0716138495457864
 1958,jessica_chen,South,67738.86,0.93
 1959,janet_cordova,South,22904.27,0.76
 1960,jamie_murphy,East,88169.7,0.75
@@ -1966,7 +1966,7 @@ employee_id,employee_name,region,total_sales,effectiveness
 1965,jennifer_hamilton,North,33327.89,0.72
 1966,christina_bartlett,South,69054.4,0.69
 1967,tyrone_johnson,South,90043.77,0.79
-1968,robert_payne,South,89152.24,0.63
+1968,robert_payne,South,187479.369604593,0.63
 1969,jay_ramirez,South,14202.07,0.95
 1970,dr_christopher_cruz,North,10498.67,0.69
 1971,clayton_clark,South,25708.11,0.93
@@ -1999,3 +1999,9 @@ employee_id,employee_name,region,total_sales,effectiveness
 1998,william_rodriguez,East,49527.16,0.89
 1999,stephen_pham,East,52694.36,0.73
 2000,edward_beasley,North,80503.14,0.83
+1880,kim_lewis,East,23385.42,0.74
+35,melissa_rogers,North,27109.95,0.9
+1952,mary_tucker,West,34950.97,0.73
+632,james_meadows,East,212357.60763484932,0.92
+719,dylan_lewis,West,31951.55,0.74
+857,barbara_garza_md,North,29103.05,0.61

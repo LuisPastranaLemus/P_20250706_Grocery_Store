@@ -25,6 +25,7 @@ try:
 
     from .eda import (outlier_limit_bounds,
                       evaluate_central_trend,
+                      calculate_bins, 
                       evaluate_correlation,
                       missing_values_heatmap,
                       plot_heatmap,
@@ -42,7 +43,8 @@ try:
                       plot_scatter,
                       plot_ecdf,
                       plot_bar_comp,
-                      plot_distribution_dispersion,
+                      plot_distribution_dispersion_sl5000,
+                      plot_distribution_dispersion_sg5000,
                       plot_bar_series,
                       plot_horizontal_lines)
     
@@ -77,6 +79,7 @@ __all__ = ['load_dataset_from_zip',
 
            'outlier_limit_bounds',
            'evaluate_central_trend',
+           'calculate_bins',
            'evaluate_correlation',
            'missing_values_heatmap',
            'plot_heatmap',
@@ -94,7 +97,8 @@ __all__ = ['load_dataset_from_zip',
            'plot_scatter',
            'plot_ecdf',
            'plot_bar_comp',
-           'plot_distribution_dispersion',
+           'plot_distribution_dispersion_sl5000',
+           'plot_distribution_dispersion_sg5000',
            'plot_bar_series',
            'plot_horizontal_lines',
            
