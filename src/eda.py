@@ -6,6 +6,7 @@ import numpy as np
 import seaborn as sns
 from matplotlib import pyplot as plt
 from scipy.stats import t, laplace, norm, shapiro
+import scipy.stats as stats
 
 
 # Function to detect outlier boundaries with optional clamping of lower bound to zero
@@ -1179,6 +1180,186 @@ def plot_horizontal_lines(df, start_col='', end_col='', y_col='', title='', xlab
     plt.tight_layout()
     plt.show()
 
+# Plots Quantile to Quantile graph
+# plot_qq_normality_tests(df, 'column_name')
+def plot_qq_normality_tests(data, column, dist='norm', dist_params=None,
+                                  line='45', title=None, figsize=(8, 6), color='grey',
+                                  outlier_color='black', outlier_marker='x'):
+    """
+    Generate a QQ plot comparing the quantiles of a sample against a theoretical distribution.
+    Outliers are detected using the IQR method and highlighted with custom color and marker.
+    Also performs normality tests and displays the results.
+
+    Parameters:
+    - data: pd.DataFrame – The dataset containing the column to analyze.
+    - column: str – The column name to analyze.
+    - dist: str or scipy.stats distribution – The distribution to compare against (default: 'norm').
+    - dist_params: tuple – Parameters required for the theoretical distribution (shape, loc, scale).
+    - line: str – Reference line type for QQ plot.
+    - title: str – Plot title.
+    - figsize: tuple – Size of the figure.
+    - color: str – Color of the main data points.
+    - outlier_color: str – Color of the outlier points.
+    - outlier_marker: str – Marker style for outliers.
+    
+    """
+
+    # Drop NA values
+    values = data[column].dropna().values
+    n = len(values)
+
+    # Determine theoretical distribution
+    dist_obj = getattr(stats, dist) if isinstance(dist, str) else dist
+
+    # Generate QQ plot data
+    if dist_params is not None:
+        (osm, osr), (slope, intercept, r) = stats.probplot(values, dist=dist_obj, sparams=dist_params)
+    else:
+        (osm, osr), (slope, intercept, r) = stats.probplot(values, dist=dist_obj)
+
+    # Detect outliers using IQR method on sample quantiles
+    Q1 = np.percentile(osr, 25)
+    Q3 = np.percentile(osr, 75)
+    IQR = Q3 - Q1
+    lower_bound = Q1 - 1.5 * IQR
+    upper_bound = Q3 + 1.5 * IQR
+    outlier_mask = (osr < lower_bound) | (osr > upper_bound)
+
+    # Plotting
+    fig, ax = plt.subplots(figsize=figsize)
+    ax.scatter(osm[~outlier_mask], osr[~outlier_mask], color=color, label='Data', marker='o')
+    ax.scatter(osm[outlier_mask], osr[outlier_mask], color=outlier_color, label='IQR Outliers', marker=outlier_marker)
+    ax.plot(osm, slope * osm + intercept, 'r-', lw=2, label=f'{dist_obj.name.title()} Fit')
+
+    ax.set_title(title or f'QQ Plot ({column}) vs. {dist_obj.name.title()}')
+    ax.set_xlabel('Theoretical Quantiles')
+    ax.set_ylabel('Sample Quantiles')
+    ax.legend()
+    ax.grid(True)
+
+    # Perform all 3 normality tests
+    shapiro_stat, shapiro_p = stats.shapiro(values)
+    dagostino_stat, dagostino_p = stats.normaltest(values)
+    ad_result = stats.anderson(values, dist='norm')
+    ad_stat = ad_result.statistic
+    ad_crit = ad_result.critical_values[2]  # 5% level
+
+    # Build results table
+    html = f"""
+    <h4>Normality Tests for <code>{column}</code> (n={n})</h4>
+    <table border="1" style="border-collapse:collapse; text-align:center;">
+    <tr>
+        <th>Test</th>
+        <th>Statistic</th>
+        <th>p-value / Critical</th>
+        <th>Conclusion</th>
+        <th>Recommended for</th>
+        <th>Sensitive to</th>
+    </tr>
+    """
+
+    conclusion_sw = "Reject H₀ (Not Normal)" if shapiro_p < 0.05 else "Fail to Reject H₀ (Possibly Normal)"
+    html += f"<tr><td>Shapiro-Wilk</td><td>{shapiro_stat:.4f}</td><td>{shapiro_p:.4f}</td><td>{conclusion_sw}</td><td>n ≤ 5000</td><td>General deviations</td></tr>"
+
+    conclusion_dp = "Reject H₀ (Not Normal)" if dagostino_p < 0.05 else "Fail to Reject H₀ (Possibly Normal)"
+    html += f"<tr><td>D’Agostino-Pearson</td><td>{dagostino_stat:.4f}</td><td>{dagostino_p:.4f}</td><td>{conclusion_dp}</td><td>n > 500</td><td>Skewness & Kurtosis</td></tr>"
+
+    conclusion_ad = "Reject H₀ (Not Normal)" if ad_stat > ad_crit else "Fail to Reject H₀ (Possibly Normal)"
+    html += f"<tr><td>Anderson-Darling</td><td>{ad_stat:.4f}</td><td>Crit: {ad_crit:.4f}</td><td>{conclusion_ad}</td><td>All sample sizes</td><td>Tail behavior</td></tr>"
+
+    html += "</table>"
+
+    display(HTML(html))
+
+# Plot horizontal boxplot
+# plot_horizontal_boxplot(df, 'column_name')
+def plot_horizontal_boxplot(data, column, figsize=(15, 5), box_color='lightgrey',
+                       point_color='black', outlier_color='red',
+                       point_marker='.', outlier_marker='x'):
+    """
+    Horizontal boxplot with aligned markers:
+    - Points, outliers and mean marker are aligned with whiskers (y=1).
+    - Red diamond shows mean.
+    - Annotates mean, median, and IQR-based outlier thresholds.
+
+    Parameters:
+    - data: pd.DataFrame – DataFrame containing the column to plot.
+    - column: str – Column name to visualize.
+    - figsize: tuple – Size of the figure (width, height).
+    - box_color: str – Color of the boxplot.
+    - point_color: str – Color of non-outlier data points.
+    - outlier_color: str – Color of outlier points.
+    - point_marker: str – Marker style for regular data points.
+    - outlier_marker: str – Marker style for outliers.
+
+    Returns:
+    - fig, ax – Matplotlib figure and axis.
+    """
+
+    values = data[column].dropna().values
+
+    # Compute statistics
+    Q1 = np.percentile(values, 25)
+    Q3 = np.percentile(values, 75)
+    IQR = Q3 - Q1
+    lower_bound = Q1 - 1.5 * IQR
+    upper_bound = Q3 + 1.5 * IQR
+    mean_val = np.mean(values)
+    median_val = np.median(values)
+
+    # Identify outliers
+    outliers = values[(values < lower_bound) | (values > upper_bound)]
+    non_outliers = values[(values >= lower_bound) & (values <= upper_bound)]
+
+    # Initialize plot
+    fig, ax = plt.subplots(figsize=figsize)
+    ax.boxplot(values, vert=False, patch_artist=True,
+               boxprops=dict(facecolor=box_color, color='black'),
+               medianprops=dict(color='blue'),
+               whiskerprops=dict(color='red'),
+               capprops=dict(color='black'),
+               flierprops=dict(marker='', linestyle='none'))  # custom outliers only
+
+    # Plot all data at y=1 (aligned with boxplot)
+    ax.scatter(non_outliers, np.full_like(non_outliers, 1), color=point_color,
+               marker=point_marker, label='Data Points', zorder=3)
+    ax.scatter(outliers, np.full_like(outliers, 1), color=outlier_color,
+               marker=outlier_marker, label='IQR Outliers', zorder=4)
+    ax.scatter(mean_val, 1, color='red', marker='D', s=70, label='Mean', zorder=5)
+
+    # Annotations
+    ax.annotate(f"Mean = {mean_val:.2f}", xy=(mean_val, 1), xytext=(0, 12),
+                textcoords='offset points', ha='center', color='red', fontsize=7, weight='bold')
+    ax.annotate(f"Median = {median_val:.2f}", xy=(median_val, 1), xytext=(0, 20),
+                textcoords='offset points', ha='center', color='blue', fontsize=7)
+    ax.annotate(f"← Outlier threshold = {lower_bound:.2f}", xy=(lower_bound, 1), xytext=(-5, -15),
+                textcoords='offset points', ha='right', color='crimson', fontsize=7)
+    ax.annotate(f"Outlier threshold = {upper_bound:.2f} →", xy=(upper_bound, 1), xytext=(5, -15),
+                textcoords='offset points', ha='left', color='crimson', fontsize=7)
+
+    # Styling
+    ax.set_yticks([])
+    ax.set_ylim(0.9, 1.1)  # Keep everything centered around y=1
+    ax.set_title(f'Boxplot with Stats: {column}', fontsize=11, weight='bold')
+    ax.grid(True, axis='x', linestyle='--', alpha=0.5)
+    ax.legend()
+
+# ---
+
+# Theoretical distributions and their parameters in scipy.stats for QQ plot
+
+# | Distribution (`scipy.stats`) | Required `dist_params`  | Parameter meaning                                    | When to use it                                                               |
+# | ---------------------------- | ----------------------- | ---------------------------------------------------- | ---------------------------------------------------------------------------- |
+# | `norm`                       | ❌ None                  | Defaults: `loc=0`, `scale=1`                         | When data appears **symmetric and bell-shaped** (normal)                     |
+# | `lognorm`                    | ✅ `(shape, loc, scale)` | `shape` = log-σ, `loc` = shift, `scale` = median-ish | For **right-skewed**, strictly **positive** data (e.g., income, price, time) |
+# | `expon`                      | ✅ `(loc, scale)`        | `loc` = start point, `scale` = mean                  | For **time between events**, **rapid decay** (e.g., Poisson processes)       |
+# | `gamma`                      | ✅ `(a, loc, scale)`     | `a` = shape parameter, controls skewness             | For **right-skewed data**, but more flexible than log-normal                 |
+# | `beta`                       | ✅ `(a, b, loc, scale)`  | `a`, `b` = shape params, `loc/scale` = range (0–1)   | For **bounded data**, such as **proportions** or percentages                 |
+# | `chi2`                       | ✅ `(df, loc, scale)`    | `df` = degrees of freedom                            | For **variance**, squared errors, or **sum of squares**                      |
+# | `weibull_min`                | ✅ `(c, loc, scale)`     | `c` = shape parameter                                | For **lifetimes**, **failure analysis**, survival modeling                   |
+# | `uniform`                    | ✅ `(loc, scale)`        | `loc` = minimum, `scale` = range                     | For data **evenly distributed** across a range (rare in real-world data)     |
+# | `t` (Student's t)            | ✅ `(df, loc, scale)`    | `df` = degrees of freedom                            | Like normal, but **fatter tails** — useful for **small samples**             |
+
 # ---
 
 # Best practices for choosing "cmaps"
@@ -1210,12 +1391,12 @@ def plot_horizontal_lines(df, start_col='', end_col='', y_col='', title='', xlab
 
 # ---
 
-# Distribución	            Método sugerido
+# Distribution	            Suggested Method
 # ------------              ----------------
-# Normal                	Sturges, Ideal para distribuciones aproximadamente normales. 
+# Normal                	Sturges, Ideal for approximately normal distributions.
 #                           Scott, 
-#                           Rice, cuando hay muchos datos y quieres bins más estables, Grande n, distribuciones suaves
-# Pequeño n             	Raíz cuadrada, Simple y rápida. Buen punto de partida.
-# Con outliers	            Freedman–Diaconis, Excelente para datos con outliers. Usa el rango intercuartil (IQR).
-# Sin idea	                bins='auto'
+#                           Rice, when there is a lot of data and you want more stable bins, Large n, smooth distributions
+# Samll n             	    Square Root, Simple and quick. A good starting point.
+# with outliers	            Freedman–Diaconis, Excellent for data with outliers. Uses the interquartile range (IQR).
+# No idea	                bins='auto'
 

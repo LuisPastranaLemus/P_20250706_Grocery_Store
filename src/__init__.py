@@ -46,7 +46,9 @@ try:
                       plot_distribution_dispersion_sl5000,
                       plot_distribution_dispersion_sg5000,
                       plot_bar_series,
-                      plot_horizontal_lines)
+                      plot_horizontal_lines,
+                      plot_qq_normality_tests,
+                      plot_horizontal_boxplot)
     
     from .features import(cast_datatypes)
 
@@ -101,6 +103,8 @@ __all__ = ['load_dataset_from_zip',
            'plot_distribution_dispersion_sg5000',
            'plot_bar_series',
            'plot_horizontal_lines',
+           'plot_qq_normality_tests',
+           'plot_horizontal_boxplot',
            
            'cast_datatypes',
 
