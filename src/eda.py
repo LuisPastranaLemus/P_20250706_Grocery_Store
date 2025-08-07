@@ -3,8 +3,11 @@
 from IPython.display import display, HTML
 import pandas as pd
 import numpy as np
+import plotly.express as px
+import plotly.graph_objects as go
 import seaborn as sns
 from matplotlib import pyplot as plt
+from scipy.stats import gaussian_kde
 from scipy.stats import t, laplace, norm, shapiro
 import scipy.stats as stats
 
@@ -1183,7 +1186,7 @@ def plot_horizontal_lines(df, start_col='', end_col='', y_col='', title='', xlab
 # Plots Quantile to Quantile graph
 # plot_qq_normality_tests(df, 'column_name')
 def plot_qq_normality_tests(data, column, dist='norm', dist_params=None,
-                                  line='45', title=None, figsize=(8, 6), color='grey',
+                                  line='45', title=None, figsize=(15, 7), color='grey',
                                   outlier_color='black', outlier_marker='x'):
     """
     Generate a QQ plot comparing the quantiles of a sample against a theoretical distribution.
@@ -1292,8 +1295,6 @@ def plot_horizontal_boxplot(data, column, figsize=(15, 5), box_color='lightgrey'
     - point_marker: str – Marker style for regular data points.
     - outlier_marker: str – Marker style for outliers.
 
-    Returns:
-    - fig, ax – Matplotlib figure and axis.
     """
 
     values = data[column].dropna().values
@@ -1400,3 +1401,349 @@ def plot_horizontal_boxplot(data, column, figsize=(15, 5), box_color='lightgrey'
 # with outliers	            Freedman–Diaconis, Excellent for data with outliers. Uses the interquartile range (IQR).
 # No idea	                bins='auto'
 
+
+
+# Function to visualize missing values within a DataFrame using a heatmap
+# missing_values_heatmap_plotlypx(df)
+def missing_values_heatmap_plotlypx(df, title='Heatmap of Missing Values'):
+    """
+    Interactive heatmap of missing values using Plotly Express.
+    
+    Parameters:
+    - df (DataFrame): Input DataFrame.
+    - title (str): Title of the heatmap.
+    
+    Output:
+    Displays an interactive heatmap.
+    """
+    missing_data = df.isna().astype(int)
+    fig = px.imshow(
+        missing_data,
+        labels=dict(x="Columns", y="Rows", color="Missing"),
+        color_continuous_scale=[[0, 'darkred'], [1, 'yellow']],
+        zmin=0, zmax=1,
+        aspect='auto',
+        title=title
+    )
+    fig.update_layout(
+        yaxis=dict(visible=False),
+        xaxis_tickangle=0,
+        xaxis=dict(tickfont=dict(size=10))  # Tamaño de letra más pequeño
+    )
+    fig.show()
+
+
+# Plots Quantile to Quantile graph
+# plot_qq_normality_tests_plotlypx(df, 'column_name')
+def plot_qq_normality_tests_plotlypx(data, column, dist='norm', dist_params=None,
+                                    title=None, color='grey', outlier_color='crimson',
+                                    outlier_marker='x', width=1200, height=600):
+    """
+    Interactive QQ plot using Plotly, including normality tests and outlier detection.
+    
+    Generate a QQ plot comparing the quantiles of a sample against a theoretical distribution.
+    Outliers are detected using the IQR method and highlighted with custom color and marker.
+    Also performs normality tests and displays the results.
+
+    Parameters:
+    - data: pd.DataFrame – The dataset containing the column to analyze.
+    - column: str – The column name to analyze.
+    - dist: str or scipy.stats distribution – The distribution to compare against (default: 'norm').
+    - dist_params: tuple – Parameters required for the theoretical distribution (shape, loc, scale).
+    - title: str – Plot title.
+    - color: str – Color of the main data points.
+    - outlier_color: str – Color of the outlier points.
+    - outlier_marker: str – Marker style for outliers.
+    """
+    values = data[column].dropna().values
+    n = len(values)
+
+    # Get theoretical distribution
+    dist_obj = getattr(stats, dist) if isinstance(dist, str) else dist
+
+    # QQ data
+    if dist_params:
+        (osm, osr), (slope, intercept, r) = stats.probplot(values, dist=dist_obj, sparams=dist_params)
+    else:
+        (osm, osr), (slope, intercept, r) = stats.probplot(values, dist=dist_obj)
+
+    # Outlier detection via IQR on sample quantiles
+    Q1, Q3 = np.percentile(osr, [25, 75])
+    IQR = Q3 - Q1
+    lower, upper = Q1 - 1.5 * IQR, Q3 + 1.5 * IQR
+    is_outlier = (osr < lower) | (osr > upper)
+
+    # Plotly figure
+    fig = go.Figure()
+
+    # Non-outliers
+    fig.add_trace(go.Scatter(
+        x=osm[~is_outlier], y=osr[~is_outlier],
+        mode='markers',
+        name='Data',
+        marker=dict(color=color, size=6),
+        hovertemplate='Theoretical: %{x:.2f}<br>Sample: %{y:.2f}<extra></extra>'
+    ))
+
+    # Outliers
+    fig.add_trace(go.Scatter(
+        x=osm[is_outlier], y=osr[is_outlier],
+        mode='markers',
+        name='IQR Outliers',
+        marker=dict(color=outlier_color, size=8, symbol=outlier_marker),
+        hovertemplate='Outlier<br>Theoretical: %{x:.2f}<br>Sample: %{y:.2f}<extra></extra>'
+    ))
+
+    # Reference line
+    line_x = np.array([osm.min(), osm.max()])
+    line_y = slope * line_x + intercept
+    fig.add_trace(go.Scatter(
+        x=line_x, y=line_y,
+        mode='lines',
+        name=f'{dist_obj.name.title()} Fit',
+        line=dict(color='red', width=2)
+    ))
+
+    fig.update_layout(
+        title=title or f'QQ Plot ({column}) vs. {dist_obj.name.title()}',
+        xaxis_title='Theoretical Quantiles',
+        yaxis_title='Sample Quantiles',
+        width=width,
+        height=height,
+        template='simple_white'
+    )
+
+    fig.show()
+
+    # Normality tests
+    shapiro_stat, shapiro_p = stats.shapiro(values)
+    dagostino_stat, dagostino_p = stats.normaltest(values)
+    ad_result = stats.anderson(values, dist='norm')
+    ad_stat = ad_result.statistic
+    ad_crit = ad_result.critical_values[2]
+
+    # Summary table
+    html = f"""
+    <h4>Normality Tests for <code>{column}</code> (n={n})</h4>
+    <table border="1" style="border-collapse:collapse; text-align:center;">
+    <tr><th>Test</th><th>Statistic</th><th>p-value / Critical</th><th>Conclusion</th><th>Recommended for</th><th>Sensitive to</th></tr>
+    <tr><td>Shapiro-Wilk</td><td>{shapiro_stat:.4f}</td><td>{shapiro_p:.4f}</td><td>{'Reject H₀ (Not Normal)' if shapiro_p < 0.05 else 'Possibly Normal'}</td><td>n ≤ 5000</td><td>General deviations</td></tr>
+    <tr><td>D’Agostino-Pearson</td><td>{dagostino_stat:.4f}</td><td>{dagostino_p:.4f}</td><td>{'Reject H₀ (Not Normal)' if dagostino_p < 0.05 else 'Possibly Normal'}</td><td>n > 500</td><td>Skewness & Kurtosis</td></tr>
+    <tr><td>Anderson-Darling</td><td>{ad_stat:.4f}</td><td>Crit: {ad_crit:.4f}</td><td>{'Reject H₀ (Not Normal)' if ad_stat > ad_crit else 'Possibly Normal'}</td><td>All sizes</td><td>Tail behavior</td></tr>
+    </table>
+    """
+    display(HTML(html))
+
+
+
+# Plot horizontal boxplot
+# plot_horizontal_boxplotpx(df, 'column_name')
+def plot_horizontal_boxplot_plotlypx(data, column, title=None):
+    """
+    Horizontal boxplot with aligned markers:
+    - Points, outliers and mean marker are aligned with whiskers (y=1).
+    - Red diamond shows mean.
+    - Annotates mean, median, and IQR-based outlier thresholds.
+
+    Parameters:
+    - data: pd.DataFrame – DataFrame containing the column to plot.
+    - column: str – Column name to visualize.
+    - title: str - Title to visualize
+    """
+    values = data[column].dropna().values
+    Q1, Q3 = np.percentile(values, [25, 75])
+    IQR = Q3 - Q1
+    lower_bound = Q1 - 1.5 * IQR
+    upper_bound = Q3 + 1.5 * IQR
+    mean_val = np.mean(values)
+    median_val = np.median(values)
+
+    outliers = values[(values < lower_bound) | (values > upper_bound)]
+    non_outliers = values[(values >= lower_bound) & (values <= upper_bound)]
+
+    fig = go.Figure()
+
+    # 1. Boxplot principal (solo datos sin outliers)
+    fig.add_trace(go.Box(
+        x=non_outliers,
+        y=['Data'] * len(non_outliers),
+        name='Boxplot',
+        orientation='h',
+        boxpoints=False,
+        fillcolor='lightgrey',
+        line=dict(color='black'),
+        showlegend=False
+    ))
+
+    # 2. Puntos normales
+    fig.add_trace(go.Scatter(
+        x=non_outliers,
+        y=['Data'] * len(non_outliers),
+        mode='markers',
+        name='Data Points',
+        marker=dict(color='black', symbol='circle', size=5),
+        hoverinfo='x'
+    ))
+
+    # 3. Outliers
+    fig.add_trace(go.Scatter(
+        x=outliers,
+        y=['Data'] * len(outliers),
+        mode='markers',
+        name='IQR Outliers',
+        marker=dict(color='red', symbol='x', size=8),
+        hoverinfo='x'
+    ))
+
+    # 4. Media (rombo rojo)
+    fig.add_trace(go.Scatter(
+        x=[mean_val],
+        y=['Data'],
+        mode='markers+text',
+        name='Mean',
+        marker=dict(color='red', symbol='diamond', size=10),
+        text=[f"Mean = {mean_val:.2f}"],
+        textposition='top center',
+        textfont=dict(color='red')
+    ))
+
+    # 5. Mediana (rombo azul)
+    fig.add_trace(go.Scatter(
+        x=[median_val],
+        y=['Data'],
+        mode='markers+text',
+        name='Median',
+        marker=dict(color='blue', symbol='diamond', size=10),
+        text=[f"Median = {median_val:.2f}"],
+        textposition='bottom center',
+        textfont=dict(color='blue')
+    ))
+
+    # 6. Líneas verticales para límites del IQR
+    fig.add_shape(type="line",
+                  x0=lower_bound, y0=0.9,
+                  x1=lower_bound, y1=1.1,
+                  line=dict(color="red", dash="dot"))
+
+    fig.add_shape(type="line",
+                  x0=upper_bound, y0=0.9,
+                  x1=upper_bound, y1=1.1,
+                  line=dict(color="red", dash="dot"))
+
+    # Layout
+    fig.update_layout(
+        title=title or f'Boxplot with Stats: {column}',
+        xaxis_title=column,
+        yaxis=dict(showticklabels=False),
+        height=450,
+        template='simple_white',
+        legend=dict(
+            orientation="h",
+            yanchor="bottom",
+            y=1.02,
+            xanchor="right",
+            x=1
+        )
+    )
+
+    fig.show()
+
+
+
+# Function to plot a frequency density histogram with optional KDE overlay
+# ds | df['column_name']
+# plot_frequency_density_plotlypx(tips['tip'], bins=20, color='grey', title='Density Plot for Tips', xlabel='Tip Amount ($)', ylabel='Density',
+#                        xticks_range=(0, 11, 1), rotation=45, show_kde=True)
+def plotly_frequency_density_plotlypx(ds, bins=10, density=True, color='grey', title='', xlabel='', ylabel='Frequency/Density',
+                                      xticks_range=None, rotation=0, show_kde=True):
+    """
+    Interactive frequency density histogram with optional KDE overlay using Plotly.
+
+    Parameters:
+    - ds (Series): Numerical data to plot.
+    - bins (int or array-like): Number or range of bins for the histogram.
+    - density(True): True for Probability density and False for Frequency
+    - color (str): Histogram bar color.
+    - title (str): Plot title.
+    - xlabel (str): Label for the x-axis.
+    - ylabel (str): Label for the y-axis.
+    - xticks_range (tuple, optional): Tuple (min, max, step) for x-tick configuration.
+    - rotation (int, optional): Angle for tick label rotation (not supported in Plotly).
+    - show_kde (bool, optional): Whether to overlay a KDE curve.
+
+    Output:
+    Displays an interactive histogram with density normalization, mean/median lines, and optional KDE.
+    """
+    ds = ds.dropna()
+    mean_val = ds.mean()
+    median_val = ds.median()
+
+    # Histogram data
+    hist_data = np.histogram(ds, bins=bins, density=density)
+    bin_edges = hist_data[1]
+    bin_centers = 0.5 * (bin_edges[1:] + bin_edges[:-1])
+    densities = hist_data[0]
+    frequencies = hist_data[0]
+
+    fig = go.Figure()
+
+    # Add histogram bars
+    fig.add_trace(go.Bar(
+        x=bin_centers,
+        y=densities if density == True else frequencies,
+        marker_color=color,
+        opacity=0.7,
+        name='Histogram',
+        width=np.diff(bin_edges),
+    ))
+
+    # Add KDE curve
+    if show_kde:
+        kde = gaussian_kde(ds)
+        x_vals = np.linspace(ds.min(), ds.max(), 500)
+        kde_vals = kde(x_vals) if density == True else (kde(x_vals) * len(ds) * np.diff(bin_edges)[0])
+        fig.add_trace(go.Scatter(
+            x=x_vals,
+            y=kde_vals,
+            mode='lines',
+            line=dict(color='darkblue', width=2),
+            name='KDE'
+        ))
+
+    # Add mean and median lines
+    fig.add_trace(go.Scatter(
+        x=[mean_val, mean_val],
+        y=[0, max(densities)*1.1] if density == True else [0, max(frequencies)*1.1],
+        mode='lines',
+        line=dict(color='red', dash='dash'),
+        name=f'Mean: {mean_val:.2f}'
+    ))
+
+    fig.add_trace(go.Scatter(
+        x=[median_val, median_val],
+        y=[0, max(densities)*1.1] if density == True else [0, max(frequencies)*1.1],
+        mode='lines',
+        line=dict(color='blue', dash='dashdot'),
+        name=f'Median: {median_val:.2f}'
+    ))
+
+    # Layout settings
+    fig.update_layout(
+        title=title,
+        xaxis_title=xlabel,
+        yaxis_title=ylabel,
+        bargap=0.05,
+        template='plotly_white',
+        legend=dict(orientation='v', x=1.02, y=1, xanchor='right', yanchor='top'),
+        width=1200,
+        height=600
+    )
+
+    if xticks_range:
+        fig.update_xaxes(
+            range=[xticks_range[0], xticks_range[1]],
+            tickmode='array',
+            tickvals=np.arange(*xticks_range)
+        )
+
+    fig.show()
