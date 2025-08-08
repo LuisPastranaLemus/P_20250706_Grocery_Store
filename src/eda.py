@@ -1,10 +1,12 @@
 # Exploratory Data Analysis for Visualizations and summary statistics
 
 from IPython.display import display, HTML
+from itertools import combinations
 import pandas as pd
 import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
+from plotly.subplots import make_subplots
 import seaborn as sns
 from matplotlib import pyplot as plt
 from scipy.stats import gaussian_kde
@@ -27,73 +29,139 @@ def outlier_limit_bounds(df, column, bound='both', clamp_zero=False):
     DataFrame(s): Rows identified as outliers, depending on the bound selected.
     """
 
-    q1 = df[column].quantile(0.25)
-    q3 = df[column].quantile(0.75)
+    q1, q3 = df[column].quantile([0.25, 0.75])
     iqr = q3 - q1
 
     lower_bound = max(q1 - 1.5 * iqr, 0) if clamp_zero else q1 - 1.5 * iqr
     upper_bound = q3 + 1.5 * iqr
 
-    if bound == 'both':
-        df_outliers_lb = df[df[column] < lower_bound]
-        df_outliers_ub = df[df[column] > upper_bound]
-        display(HTML(f"> Lower outlier threshold for column <i>'{column}'</i>: <b>{lower_bound}</b>"))
-        display(HTML(f"> Upper outlier threshold for column <i>'{column}'</i>: <b>{upper_bound}</b>"))
+    display(HTML(f"> Outlier thresholds for <i>'{column}'</i>: \n"
+                 f"> Lower = <b>{lower_bound:.3f}</b>, > Upper = <b>{upper_bound:.3f}</b>"))
 
-        if df_outliers_lb.empty and df_outliers_ub.empty:
-            display(HTML(f"> No outliers found in column <i>'{column}'</i>."))
-
-        return df_outliers_lb, df_outliers_ub
-
-    elif bound == 'upper':
-        df_outliers_ub = df[df[column] > upper_bound]
-        display(HTML(f"> Upper outlier threshold for column <i>'{column}'</i>: <b>{upper_bound}</b>"))
-
-        if df_outliers_ub.empty:
-            display(HTML(f"> No upper outliers found in column <i>'{column}'</i>."))
-
-        return df_outliers_ub
-
-    elif bound == 'lower':
-        df_outliers_lb = df[df[column] < lower_bound]
-        display(HTML(f"> Lower outlier threshold for column <i>'{column}'</i>: <b>{lower_bound}</b>"))
-
-        if df_outliers_lb.empty:
-            display(HTML(f"> No lower outliers found in column <i>'{column}'</i>."))
-
-        return df_outliers_lb
-
-    else:
+    if bound not in ['both', 'lower', 'upper']:
         display(HTML(f"> Invalid 'bound' parameter. Use <b>'both'</b>, <b>'upper'</b>, or <b>'lower'</b>."))
-        return None
+        return
+
+    outliers = pd.DataFrame()
+    
+    if bound in ['both', 'lower']:
+        lower_outliers = df[df[column] < lower_bound]
+        if lower_outliers.empty:
+            display(HTML(f"> <b>No</b> lower outliers found in column <i>'{column}'</i>."))
+        outliers = pd.concat([outliers, lower_outliers])
+
+    if bound in ['both', 'upper']:
+        upper_outliers = df[df[column] > upper_bound]
+        if upper_outliers.empty:
+            display(HTML(f"> <b>No</b> upper outliers found in column <i>'{column}'</i>."))
+        outliers = pd.concat([outliers, upper_outliers])
+
+    display(HTML(f"- - -"))
+    display(HTML(f"> Outliers:"))
+
+    return outliers if not outliers.empty else None
 
 # Function to evaluate the central tendency of a numerical feature
 def evaluate_central_trend(df, column):
     """
-    Evaluates the central tendency of a given column using the coefficient of variation (CV).
+    Evaluates the central tendency of a given column using the coefficient of variation (CV)
+    and skewness to determine the most reliable measure (mean or median).
     
     Parameters:
     df (DataFrame): The input DataFrame.
     column (str): Name of the numerical column to evaluate.
     
     Output:
-    Displays the coefficient of variation and recommends the most reliable measure of central tendency
-    based on the level of variability.
+    Displays CV, skewness, and recommends the most reliable central measure.
     """
     
-    cv = (df[column].std() / df[column].mean()) * 100
-    display(HTML(f"> Coefficient of variation for column <i>'{column}'</i>: <b>{cv:.2f} %</b>"))
-
-    if 0 <= cv <= 10:
-        display(HTML("> Very low variability: <i>highly reliable mean</i>. Recommended central measure: <b>mean</b>."))
-    elif 10 < cv <= 20:
-        display(HTML("> Moderate variability: <i>reasonably reliable mean</i>. Recommended central measure: <b>mean</b>."))
-    elif 20 < cv <= 30:
-        display(HTML("> Considerable variability: <i>potentially biased mean</i>. Recommended central measure: <b>mean</b> with caution."))
-    else:
-        display(HTML("> High variability: <i>mean may be misleading</i>. Recommended central measure: <b>median</b>."))
+    data = df[column].dropna()
     
-    print()
+    if data.empty:
+        display(HTML(f"<b>Column '{column}' is empty or contains only NaNs.</b>"))
+        return
+    
+    mean = data.mean()
+    std = data.std()
+    skew = data.skew()
+    
+    if mean == 0:
+        display(HTML(f"> Mean of column '{column}' is <b>zero</b>.\n Coefficient of Variation is <b>undefined</b>."))
+        return
+    
+    cv = (std / mean) * 100
+    
+    # CV-based interpretation
+    if cv <= 10:
+        cv_msg = "Very low variability: highly reliable mean."
+    elif cv <= 20:
+        cv_msg = "Moderate variability: reasonably reliable mean."
+    elif cv <= 30:
+        cv_msg = "Considerable variability: mean may be biased."
+    else:
+        cv_msg = "High variability: mean may be misleading."
+    
+    # Skewness-based adjustment
+    abs_skew = abs(skew)
+    if abs_skew <= 0.3:
+        skew_msg = "Low skewness: distribution is nearly symmetric."
+        skew_level = "low"
+    elif abs_skew <= 0.6:
+        skew_msg = "Moderate skewness: some asymmetry present."
+        skew_level = "moderate"
+    elif abs_skew <= 1.0:
+        skew_msg = "High skewness: strong asymmetry detected."
+        skew_level = "high"
+    else:
+        skew_msg = "Very high skewness: distribution is heavily distorted."
+        skew_level = "very_high"
+    
+    # Central trend evaluation
+    if cv > 30 or skew_level in ["high", "very_high"]:
+        central = "median"
+        reason = "due to high variability or strong skewness"
+    elif cv > 20 or skew_level == "moderate":
+        central = "median (with caution)"
+        reason = "due to moderate variability or skewness"
+    else:
+        central = "mean"
+        reason = "distribution is stable and symmetric"
+
+    display(HTML(f"> Coefficient of variation for column <i>'{column}'</i>: <b>{cv:.2f} %</b>"))
+    display(HTML(f"> Skewness of column <i>'{column}'</i>: <b>{skew:.2f}</b>"))
+    display(HTML(f"> {cv_msg}"))
+    display(HTML(f"> {skew_msg}"))
+    display(HTML(f"> Recommended central measure: <b>{central}</b> ({reason})"))
+    
+    # Validation of values for transformation
+    min_val = data.min()
+    has_negatives = (min_val < 0)
+    has_zeros = (data == 0).any()
+    all_positive = (min_val > 0)
+
+    # Robust Transformation Suggestion
+    if skew_level in ["high", "very_high"]:
+        if skew > 0:
+            transform_suggestion = "To reduce right skew:"
+            if all_positive:
+                transform_suggestion += " [log(x), sqrt(x), reciprocal(x), Box-Cox]."
+            elif not has_negatives:
+                transform_suggestion += " [sqrt(x), reciprocal(x), Yeo-Johnson (handles zeros)]."
+            else:
+                transform_suggestion += " [Yeo-Johnson, quantile or rank-based transforms (handles negatives)]."
+        else:
+            transform_suggestion = "To reduce left skew:"
+            if not has_negatives:
+                transform_suggestion += " [square(x), exp(x), reflect+log(x), Yeo-Johnson]."
+            else:
+                transform_suggestion += " [Yeo-Johnson or rank-based transforms (handles negatives)]."
+
+        if abs_skew > 1.5 or data.max() > 10 * data.median():
+            transform_suggestion += " For extreme skew or heavy-tailed distributions, consider quantile or normal score transforms instead of classical ones."
+
+        display(HTML(f"> Suggested transformation: <i>{transform_suggestion}</i>"))
+    
+    return 
 
 # function in order to select the correct bins calculation
 # bins = calculate_bins(df['total_spent'], method='fd')
@@ -720,19 +788,44 @@ def plot_pairplot(df, height=3, aspect=2.5, point_color='grey'):
 # Function to plot a scatter matrix for exploring pairwise relationships (CORR)
 # df | df['column1_name', 'column2_name', ..., 'columnN_name']
 # plot_scatter_matrix(df, figsize=(12, 10), diagonal='kde', color='teal', alpha=0.4)
-def plot_scatter_matrix(df, figsize=(15, 7), diagonal='hist', color='grey', alpha=0.3):
+def plot_scatter_matrix(df, columns=None, figsize=(15, 7), color='grey', alpha=0.4):
     """
-    Plots a scatter matrix for all numeric columns in a DataFrame using pandas' plotting tools.
+    Plots a lower-triangle scatter matrix with histograms on the diagonal and correlation annotations.
 
     Parameters:
-    - df (DataFrame): The dataset to visualize.
-    - figsize (tuple): Size of the overall figure.
-    - diagonal (str): Type of plot on the diagonal ('hist' or 'kde').
+    - df (DataFrame): Input dataset.
+    - columns (list): Optional list of columns to include. If None, uses all numeric.
+    - figsize (tuple): Size of the full figure.
+    - color (str): Color of scatter points.
+    - alpha (float): Transparency of points.
 
     Returns:
-    None: Displays the scatter matrix.
+    - None: Displays the plot.
     """
-    pd.plotting.scatter_matrix(df, figsize=figsize, diagonal=diagonal, color=color, alpha=alpha)
+    if columns is None:
+        columns = df.select_dtypes(include='number').columns.tolist()
+
+    n = len(columns)
+    fig, axes = plt.subplots(n, n, figsize=figsize)
+
+    for i in range(n):
+        for j in range(n):
+            ax = axes[i, j]
+            x = columns[j]
+            y = columns[i]
+
+            if i > j:
+                sns.scatterplot(data=df, x=x, y=y, ax=ax, color=color, alpha=alpha)
+                corr = df[x].corr(df[y])
+                ax.annotate(f"r = {corr:.2f}", xy=(0.05, 0.85), xycoords='axes fraction',
+                            fontsize=9, backgroundcolor='white')
+            elif i == j:
+                sns.histplot(df[x], ax=ax, color=color, kde=True)
+                ax.set_ylabel('')
+                ax.set_xlabel('')
+            else:
+                ax.axis('off')
+
     plt.tight_layout()
     plt.show()
 
@@ -1746,4 +1839,132 @@ def plotly_frequency_density_plotlypx(ds, bins=10, density=True, color='grey', t
             tickvals=np.arange(*xticks_range)
         )
 
+    fig.show()
+
+# Function to plot a scatter matrix for exploring pairwise relationships (CORR)
+# df | df['column1_name', 'column2_name', ..., 'columnN_name']
+# plot_scatter_matrix(df, figsize=(12, 10), diagonal='kde', color='teal', alpha=0.4)
+
+def plot_scatter_matrixpx(df: pd.DataFrame, columns=None, height: int = 600, marker_color: str = "grey", marker_opacity: float = 0.6,
+                          bins: int = 20, horizontal_spacing: float = 0.03, vertical_spacing: float = 0.03,):
+    """
+    Interactive correlation matrix (lower triangle) with:
+    - Scatter in cells i>j
+    - Histogram + KDE on the diagonal (i=j)
+    - Pearson correlation annotation (r) in each scatter cell
+    """
+    if columns is None:
+        columns = df.select_dtypes(include="number").columns.tolist()
+    if len(columns) < 2:
+        raise ValueError("At least 2 numeric columns are required.")
+
+    data = df[columns].copy()
+    n = len(columns)
+    fig = make_subplots(
+        rows=n,
+        cols=n,
+        shared_xaxes=False,
+        shared_yaxes=False,
+        horizontal_spacing=horizontal_spacing,
+        vertical_spacing=vertical_spacing,
+    )
+
+    def axis_suffix(row, col):
+        idx = (row - 1) * n + col
+        return "" if idx == 1 else str(idx)
+
+    for i, ycol in enumerate(columns, start=1):
+        for j, xcol in enumerate(columns, start=1):
+
+            if i > j:  # Lower triangle: scatter + r
+                pair = data[[xcol, ycol]].dropna()
+                if not pair.empty:
+                    fig.add_trace(
+                        go.Scattergl(
+                            x=pair[xcol],
+                            y=pair[ycol],
+                            mode="markers",
+                            marker=dict(size=5, opacity=marker_opacity, color=marker_color),
+                            hovertemplate=f"{xcol}: %{{x}}<br>{ycol}: %{{y}}<extra></extra>",
+                            showlegend=False,
+                        ),
+                        row=i, col=j
+                    )
+                    r = pair[xcol].corr(pair[ycol])
+                    suf = axis_suffix(i, j)
+                    fig.add_annotation(
+                        x=0.04, y=0.9,
+                        xref=f"x{suf} domain", yref=f"y{suf} domain",
+                        text=f"r = {r:.2f}",
+                        showarrow=False,
+                        font=dict(size=12),
+                        bgcolor="white",
+                        bordercolor="#e0e0e0",
+                        borderwidth=1,
+                        opacity=0.9,
+                    )
+
+                if i == n:
+                    fig.update_xaxes(title_text=xcol, row=i, col=j)
+                if j == 1:
+                    fig.update_yaxes(title_text=ycol, row=i, col=j)
+
+            elif i == j:  # Diagonal: histogram + KDE
+                series = data[xcol].dropna()
+                if not series.empty:
+                    #1) Explicitly calculate bins to find the exact bin_width
+                    counts, edges = np.histogram(series, bins=bins)
+                    bin_width = edges[1] - edges[0]
+
+                    # 2) Histogram using the same edges (matches 1:1 with np.histogram)
+                    fig.add_trace(
+                        go.Histogram(
+                            x=series,
+                            xbins=dict(start=edges[0], end=edges[-1], size=bin_width),
+                            marker=dict(color=marker_color),
+                            opacity=0.6,
+                            showlegend=False,
+                            hovertemplate=f"{xcol}: %{{x}}<br>count: %{{y}}<extra></extra>",
+                        ),
+                        row=i, col=j
+                    )
+
+                    # 3) KDE on the same mesh and scaled to "counts"
+                    kde = gaussian_kde(series)
+                    x_grid = np.linspace(edges[0], edges[-1], 400)  # dense mesh within edges
+                    y_kde = kde(x_grid)
+
+                    # Scale to counts: ∫KDE = 1 => height in "counts" ≈ N * bin_width * KDE(x)
+                    y_kde_counts = y_kde * len(series) * bin_width
+
+                    fig.add_trace(
+                        go.Scatter(
+                            x=x_grid,
+                            y=y_kde_counts,
+                            mode="lines",
+                            line=dict(width=3),   # we don't set color so it inherits from the theme if you want
+                            name="KDE",
+                            showlegend=False,
+                            hovertemplate=f"{xcol}: %{{x}}<br>KDE(counts): %{{y}}<extra></extra>",
+                        ),
+                        row=i, col=j
+                    )
+
+                if i == n:
+                    fig.update_xaxes(title_text=xcol, row=i, col=j)
+                if j == 1:
+                    fig.update_yaxes(title_text="count", row=i, col=j)
+
+            else:
+                fig.update_xaxes(visible=False, row=i, col=j)
+                fig.update_yaxes(visible=False, row=i, col=j)
+
+    fig.update_layout(
+        height=height,
+        margin=dict(l=40, r=10, t=40, b=40),
+        template="plotly_white",
+        title=dict(text="Correlation matrix (lower triangle) with Pearson's r and KDE", x=0.5),
+    )
+    fig.update_xaxes(showgrid=True, zeroline=False)
+    fig.update_yaxes(showgrid=True, zeroline=False)
     fig.show()

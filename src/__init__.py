@@ -52,7 +52,8 @@ try:
                       missing_values_heatmap_plotlypx,
                       plot_qq_normality_tests_plotlypx,
                       plot_horizontal_boxplot_plotlypx,
-                      plotly_frequency_density_plotlypx)
+                      plotly_frequency_density_plotlypx,
+                      plot_scatter_matrixpx)
     
     from .features import(cast_datatypes)
 
@@ -113,6 +114,7 @@ __all__ = ['load_dataset_from_zip',
            'plot_qq_normality_tests_plotlypx',
            'plot_horizontal_boxplot_plotlypx',
            'plotly_frequency_density_plotlypx',
+           'plot_scatter_matrixpx',
            
            'cast_datatypes',
 
