@@ -202,7 +202,7 @@ def calculate_bins(data, method='fd'):
 
 
 # Function to evaluate pairwise correlations among numerical columns
-def evaluate_correlation(df):
+def evaluate_correlation(df, columns=None):
     """
     Evaluates pairwise Pearson correlations between numerical columns in a DataFrame.
     
@@ -217,7 +217,12 @@ def evaluate_correlation(df):
         > Positive vs. Negative direction
     """
 
-    numeric_cols = df.select_dtypes(include='number').columns
+    if columns is None:
+            numeric_cols = df.select_dtypes(include="number").columns.tolist()
+    else:
+        numeric_cols = [col for col in columns if pd.api.types.is_numeric_dtype(df[col])]
+        if not numeric_cols:
+            raise ValueError("No hay columnas numéricas en la lista especificada.")
 
     seen_pairs = set()
 
@@ -225,11 +230,10 @@ def evaluate_correlation(df):
         for col_y in numeric_cols:
             if col_x != col_y and (col_y, col_x) not in seen_pairs:
                 corr = df[col_x].corr(df[col_y])
+                abs_corr = abs(corr)
 
                 strength = ''
                 direction = 'positive' if corr > 0 else 'negative' if corr < 0 else 'neutral'
-
-                abs_corr = abs(corr)
                 if abs_corr > 0.7:
                     strength = 'Strong'
                 elif abs_corr > 0.3:
