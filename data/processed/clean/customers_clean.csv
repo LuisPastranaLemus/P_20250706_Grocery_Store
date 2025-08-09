@@ -1,7 +1,7 @@
 customer_id,customer_name,join_date,total_spent,frequency,segment
 1,charles_miller,2024-08-13 00:00:00-07:00,294.24,12,occasional
 2,michael_long,2024-09-03 00:00:00-07:00,4011.83,7,frequent
-3,kimberly_green,2024-01-23 00:00:00-08:00,789.85,15,high_value
+3,kimberly_green,2024-01-23 00:00:00-08:00,937.69,15,high_value
 4,beverly_bowers,2024-11-03 00:00:00-07:00,1403.0,13,occasional
 5,pamela_berg,2024-08-05 00:00:00-07:00,1354.18,18,high_value
 6,tiffany_ryan,2024-07-15 00:00:00-07:00,1253.15,1,occasional
@@ -124,7 +124,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 123,susan_james,2024-04-11 00:00:00-07:00,506.82,12,frequent
 124,kathryn_baker,2025-04-06 00:00:00-07:00,474.47,34,frequent
 125,alisha_larson,2023-10-10 00:00:00-07:00,3107.51,26,high_value
-126,taylor_garcia,2023-09-14 00:00:00-07:00,356.55,17,frequent
+126,taylor_garcia,2023-09-14 00:00:00-07:00,409.58,17,frequent
 127,jon_becker,2025-07-06 00:00:00-07:00,2642.89,26,frequent
 128,teresa_norman,2023-07-17 00:00:00-07:00,4598.32,39,high_value
 129,melissa_robinson,2024-10-06 00:00:00-07:00,1658.56,19,high_value
@@ -208,7 +208,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 207,ryan_fritz,2023-10-06 00:00:00-07:00,3523.25,1,high_value
 208,marie_banks,2023-11-17 00:00:00-08:00,4185.52,45,high_value
 209,shannon_bolton,2024-07-15 00:00:00-07:00,3712.93,39,high_value
-210,james_perkins,2024-11-11 00:00:00-08:00,429.17,27,frequent
+210,james_perkins,2024-11-11 00:00:00-08:00,536.45,27,frequent
 211,dr_stephanie_mitchell,2024-10-20 00:00:00-07:00,2258.37,12,frequent
 212,melissa_peterson,2024-04-30 00:00:00-07:00,4916.02,42,frequent
 213,terry_smith,2023-08-09 00:00:00-07:00,2546.33,6,high_value
@@ -290,7 +290,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 289,tiffany_pierce,2024-08-21 00:00:00-07:00,2444.72,24,occasional
 290,dr_jeffrey_boyd,2023-08-26 00:00:00-07:00,4214.5,19,frequent
 291,robert_ramirez,2025-03-02 00:00:00-08:00,2191.41,16,high_value
-292,april_bowman,2025-04-19 00:00:00-07:00,12.26,9,high_value
+292,april_bowman,2025-04-19 00:00:00-07:00,23.75,9,high_value
 293,deanna_figueroa,2024-12-21 00:00:00-08:00,607.48,25,high_value
 294,mark_taylor,2024-12-29 00:00:00-08:00,2098.3,6,high_value
 295,erik_porter,2024-12-05 00:00:00-08:00,2667.58,42,occasional
@@ -333,7 +333,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 332,diana_ayala,2023-08-21 00:00:00-07:00,2740.43,37,frequent
 333,kimberly_logan,2025-05-26 00:00:00-07:00,4835.11,21,occasional
 334,mark_bell,2025-01-11 00:00:00-08:00,2581.23,11,high_value
-335,anthony_davis,2023-08-02 00:00:00-07:00,422.34000000000003,40,occasional
+335,anthony_davis,2023-08-02 00:00:00-07:00,2700.82,40,occasional
 336,adam_hunter,2025-03-01 00:00:00-08:00,3053.01,25,occasional
 337,shannon_thomas,2024-06-07 00:00:00-07:00,454.29,6,
 338,veronica_young,2025-01-03 00:00:00-08:00,2541.3,33,high_value
@@ -404,7 +404,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 403,patrick_may,2025-06-29 00:00:00-07:00,3250.05,35,frequent
 404,nicole_yates,2024-09-10 00:00:00-07:00,2177.74,43,frequent
 405,james_holmes,2025-01-28 00:00:00-08:00,4725.19,45,high_value
-406,cassandra_obrien,2025-06-22 00:00:00-07:00,417.25,47,occasional
+406,cassandra_obrien,2025-06-22 00:00:00-07:00,569.71,47,occasional
 407,patricia_reyes,2024-09-24 00:00:00-07:00,2018.13,16,frequent
 408,chelsea_meyer,2024-03-29 00:00:00-07:00,2137.87,26,high_value
 409,robert_campbell,2023-07-13 00:00:00-07:00,960.29,11,occasional
@@ -431,7 +431,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 430,leslie_davis,2023-09-13 00:00:00-07:00,2403.08,29,occasional
 431,adam_lam,2024-08-25 00:00:00-07:00,3261.46,28,frequent
 432,stephanie_lopez,2024-06-09 00:00:00-07:00,323.68,41,occasional
-433,gordon_pineda,2025-06-12 00:00:00-07:00,692.4,14,occasional
+433,gordon_pineda,2025-06-12 00:00:00-07:00,794.96,14,occasional
 434,keith_johns,2024-08-07 00:00:00-07:00,1229.01,3,occasional
 435,yolanda_webb,2025-04-24 00:00:00-07:00,1588.01,4,frequent
 436,curtis_stevenson,2024-11-18 00:00:00-08:00,3411.36,2,frequent
@@ -452,7 +452,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 451,tamara_grant,2025-03-05 00:00:00-08:00,879.4,6,frequent
 452,cheryl_pierce,2025-06-10 00:00:00-07:00,538.01,27,occasional
 453,michael_davidson,2025-02-05 00:00:00-08:00,3539.7,5,high_value
-454,john_maxwell,2023-12-07 00:00:00-08:00,387.71,7,
+454,john_maxwell,2023-12-07 00:00:00-08:00,654.11,7,
 455,debra_jackson,2025-05-27 00:00:00-07:00,3350.09,38,high_value
 456,ashley_jacobs,2024-04-16 00:00:00-07:00,1875.38,49,high_value
 457,charles_weaver,2025-03-22 00:00:00-07:00,412.87,33,frequent
@@ -541,7 +541,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 540,stephanie_sanders,2024-12-07 00:00:00-08:00,4799.76,42,occasional
 541,jacob_meza,2025-06-18 00:00:00-07:00,782.03,9,occasional
 542,natalie_price,2024-01-06 00:00:00-08:00,4367.46,15,frequent
-543,eric_massey,2024-08-31 00:00:00-07:00,103.06,43,high_value
+543,eric_massey,2024-08-31 00:00:00-07:00,120.16,43,high_value
 544,teresa_robinson,2024-10-20 00:00:00-07:00,4858.88,24,frequent
 545,justin_hughes,2024-09-02 00:00:00-07:00,272.43,47,frequent
 546,diana_schmidt,2023-10-26 00:00:00-07:00,1083.26,22,occasional
@@ -555,13 +555,13 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 554,gary_bradley,2023-09-24 00:00:00-07:00,1182.67,21,high_value
 555,cindy_campos,2024-02-05 00:00:00-08:00,2498.83,42,frequent
 556,jody_cruz,2023-08-30 00:00:00-07:00,4734.46,45,occasional
-557,tina_bailey,2025-03-09 00:00:00-08:00,403.18,34,frequent
+557,tina_bailey,2025-03-09 00:00:00-08:00,599.26,34,frequent
 558,oscar_nunez,2024-02-24 00:00:00-08:00,808.69,9,occasional
 559,stephanie_orr,2024-07-02 00:00:00-07:00,175.1,39,high_value
 560,anthony_guzman,2025-06-07 00:00:00-07:00,4995.91,29,frequent
 561,megan_pacheco,2023-09-01 00:00:00-07:00,4264.98,10,occasional
 562,shelia_brock,2023-07-15 00:00:00-07:00,1055.15,16,occasional
-563,richard_booth,2024-07-06 00:00:00-07:00,306.65,30,high_value
+563,richard_booth,2024-07-06 00:00:00-07:00,392.5,30,high_value
 564,kevin_lucero,2025-01-16 00:00:00-08:00,2286.81,7,high_value
 565,patricia_bush,2024-04-27 00:00:00-07:00,4628.77,1,frequent
 566,robert_patel,2025-01-26 00:00:00-08:00,2788.88,29,occasional
@@ -654,7 +654,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 653,thomas_campbell,2024-04-20 00:00:00-07:00,1677.59,44,occasional
 654,joseph_taylor,2025-04-23 00:00:00-07:00,3515.91,12,frequent
 655,robert_patel,2024-06-16 00:00:00-07:00,3282.25,40,occasional
-656,michael_hawkins,2024-01-03 00:00:00-08:00,151.42000000000002,36,frequent
+656,michael_hawkins,2024-01-03 00:00:00-08:00,151.42,36,frequent
 657,casey_gonzalez,2024-06-06 00:00:00-07:00,1181.39,22,occasional
 658,jacqueline_middleton,2024-05-06 00:00:00-07:00,3486.3,25,occasional
 659,henry_lynn,2025-02-25 00:00:00-08:00,2590.52,49,occasional
@@ -835,7 +835,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 834,adrian_wiley,2024-05-30 00:00:00-07:00,2566.94,29,occasional
 835,ruth_miller,2025-06-29 00:00:00-07:00,269.84,33,frequent
 836,robert_malone,2023-07-17 00:00:00-07:00,3311.19,1,occasional
-837,jacob_ballard,2024-07-23 00:00:00-07:00,499.61,12,high_value
+837,jacob_ballard,2024-07-23 00:00:00-07:00,672.21,12,high_value
 838,johnny_moreno,2024-05-08 00:00:00-07:00,3238.1,3,occasional
 839,luis_lee,2025-01-03 00:00:00-08:00,621.13,26,occasional
 840,randy_daniels,2025-07-01 00:00:00-07:00,1659.63,4,occasional
@@ -967,10 +967,10 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 966,paul_allen,2025-01-11 00:00:00-08:00,4564.55,4,occasional
 967,erik_garcia,2024-11-18 00:00:00-08:00,2551.15,19,frequent
 968,mr_john_harper,2025-06-04 00:00:00-07:00,2505.88,2,frequent
-969,james_ball,2024-03-30 00:00:00-07:00,801.5500000000001,37,occasional
+969,james_ball,2024-03-30 00:00:00-07:00,1025.11,37,occasional
 970,dawn_torres,2023-10-21 00:00:00-07:00,622.24,38,occasional
 971,kyle_patel,2024-10-28 00:00:00-07:00,4602.0,29,high_value
-972,joshua_thomas,2024-11-18 00:00:00-08:00,548.4000000000001,48,frequent
+972,joshua_thomas,2024-11-18 00:00:00-08:00,548.4,48,frequent
 973,mindy_hartman,2024-02-21 00:00:00-08:00,624.63,20,occasional
 974,mark_shepard,2023-07-12 00:00:00-07:00,4452.8,35,frequent
 975,michelle_vasquez,2023-11-08 00:00:00-08:00,2798.56,41,high_value
@@ -1059,7 +1059,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 1058,kevin_atkins,2024-09-22 00:00:00-07:00,1145.71,1,frequent
 1059,william_cuevas,2024-10-08 00:00:00-07:00,547.87,11,frequent
 1060,erik_haley,2023-11-24 00:00:00-08:00,3933.56,22,frequent
-1061,jennifer_serrano,2023-10-20 00:00:00-07:00,333.53999999999996,16,frequent
+1061,jennifer_serrano,2023-10-20 00:00:00-07:00,455.1,16,frequent
 1062,jeff_white,2023-09-06 00:00:00-07:00,1875.56,17,high_value
 1063,rebecca_gonzalez,2024-03-20 00:00:00-07:00,106.44,13,high_value
 1064,ryan_harris,2024-05-23 00:00:00-07:00,3587.11,29,high_value
@@ -1093,7 +1093,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 1092,kimberly_brooks,2025-05-03 00:00:00-07:00,1842.23,14,high_value
 1093,tara_ryan,2023-10-21 00:00:00-07:00,1602.15,46,occasional
 1094,meagan_lane,2024-04-27 00:00:00-07:00,4762.29,10,occasional
-1095,sandra_schmidt,2023-11-28 00:00:00-08:00,392.74,10,high_value
+1095,sandra_schmidt,2023-11-28 00:00:00-08:00,453.16,10,high_value
 1096,pamela_davis,2024-02-05 00:00:00-08:00,2622.49,25,occasional
 1097,danielle_rose,2023-10-03 00:00:00-07:00,2734.84,1,frequent
 1098,stacy_garcia,2025-06-04 00:00:00-07:00,3716.2,41,frequent
@@ -1202,7 +1202,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 1201,jay_waller,2023-09-03 00:00:00-07:00,4033.11,46,occasional
 1202,justin_jordan_md,2024-10-22 00:00:00-07:00,1815.54,29,frequent
 1203,april_rodriguez,2024-06-25 00:00:00-07:00,1142.43,40,high_value
-1204,theresa_mueller,2023-08-18 00:00:00-07:00,486.92,29,high_value
+1204,theresa_mueller,2023-08-18 00:00:00-07:00,497.96,29,high_value
 1205,kathryn_lopez,2024-08-05 00:00:00-07:00,3747.16,21,occasional
 1206,johnny_golden,2023-11-21 00:00:00-08:00,2508.87,42,occasional
 1207,brian_lewis,2025-04-06 00:00:00-07:00,1678.47,35,occasional
@@ -1221,7 +1221,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 1220,austin_cook,2025-05-24 00:00:00-07:00,1076.41,43,high_value
 1221,dr_jennifer_herrera_dds,2024-06-20 00:00:00-07:00,3010.74,8,occasional
 1222,katie_johnson,2023-07-16 00:00:00-07:00,3329.19,3,occasional
-1223,chad_sanchez,2025-03-15 00:00:00-07:00,98.27000000000001,46,high_value
+1223,chad_sanchez,2025-03-15 00:00:00-07:00,98.27,46,high_value
 1224,whitney_dickson,2024-10-25 00:00:00-07:00,3880.01,11,frequent
 1225,john_prince,2024-08-21 00:00:00-07:00,4840.8,19,frequent
 1226,briana_campbell,2025-01-05 00:00:00-08:00,692.26,37,frequent
@@ -1290,7 +1290,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 1289,ethan_johnson,2025-03-16 00:00:00-07:00,116.1,35,high_value
 1290,stefanie_brown,2024-01-29 00:00:00-08:00,3497.94,6,occasional
 1291,stacy_oliver,2025-02-13 00:00:00-08:00,4355.63,18,frequent
-1292,christian_dickson,2024-01-10 00:00:00-08:00,182.62,26,high_value
+1292,christian_dickson,2024-01-10 00:00:00-08:00,318.2,26,high_value
 1293,steven_robertson,2024-03-30 00:00:00-07:00,3417.24,39,frequent
 1294,jill_woods,2023-09-14 00:00:00-07:00,3572.39,12,high_value
 1295,robert_cook,2025-07-06 00:00:00-07:00,668.99,45,high_value
@@ -1489,7 +1489,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 1488,tabitha_austin,2023-11-30 00:00:00-08:00,735.6,45,occasional
 1489,michael_beard,2025-03-02 00:00:00-08:00,3132.64,6,frequent
 1490,doris_owen,2024-11-06 00:00:00-08:00,3951.51,36,high_value
-1491,ronald_mason,2023-12-19 00:00:00-08:00,154.04,26,frequent
+1491,ronald_mason,2023-12-19 00:00:00-08:00,158.32,26,frequent
 1492,maria_reid,2023-07-10 00:00:00-07:00,191.88,48,frequent
 1493,jessica_reeves,2023-12-20 00:00:00-08:00,2975.56,45,occasional
 1494,dr_rhonda_sherman,2024-01-23 00:00:00-08:00,1043.6,44,occasional
@@ -1512,17 +1512,17 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 1511,ashley_brown,2023-07-26 00:00:00-07:00,1304.51,45,high_value
 1512,michele_simpson,2025-04-27 00:00:00-07:00,3297.67,6,high_value
 1513,logan_hunt,2025-06-11 00:00:00-07:00,373.63,10,high_value
-1514,trevor_haynes,2024-11-09 00:00:00-08:00,223.69,1,high_value
+1514,trevor_haynes,2024-11-09 00:00:00-08:00,325.48,1,high_value
 1515,matthew_diaz,2023-10-07 00:00:00-07:00,1058.73,35,frequent
 1516,ashley_klein,2025-06-30 00:00:00-07:00,2445.54,1,occasional
 1517,paul_miller,2025-02-05 00:00:00-08:00,130.05,16,occasional
-1518,michael_shields,2024-02-29 00:00:00-08:00,486.84999999999997,44,
+1518,michael_shields,2024-02-29 00:00:00-08:00,592.81,44,
 1519,christine_reed,2024-05-10 00:00:00-07:00,4800.46,25,occasional
 1520,shane_lewis,2024-05-28 00:00:00-07:00,913.77,29,frequent
 1521,christopher_matthews,2025-06-09 00:00:00-07:00,4066.64,5,high_value
 1522,ryan_barnes,2024-02-03 00:00:00-08:00,280.76,33,frequent
 1523,erika_johnson,2023-08-22 00:00:00-07:00,1357.26,47,frequent
-1524,jasmine_cox,2023-07-09 00:00:00-07:00,2637.86,39,frequent
+1524,jasmine_cox,2023-07-09 00:00:00-07:00,560.46,39,frequent
 1525,kenneth_francis,2024-10-27 00:00:00-07:00,1563.69,13,frequent
 1526,larry_white,2025-01-04 00:00:00-08:00,1752.41,44,occasional
 1527,joseph_williams,2023-12-24 00:00:00-08:00,3714.96,10,high_value
@@ -1544,7 +1544,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 1543,william_sims,2024-11-27 00:00:00-08:00,4204.5,41,
 1544,mark_davidson,2025-03-05 00:00:00-08:00,744.78,46,high_value
 1545,marie_murphy,2023-11-04 00:00:00-07:00,3769.0,34,frequent
-1546,amy_owen_md,2024-04-17 00:00:00-07:00,596.5500000000001,22,high_value
+1546,amy_owen_md,2024-04-17 00:00:00-07:00,710.91,22,high_value
 1547,anthony_bender,2025-06-25 00:00:00-07:00,3559.51,22,frequent
 1548,philip_webster,2024-07-21 00:00:00-07:00,3631.86,7,high_value
 1549,kiara_ferrell,2024-05-15 00:00:00-07:00,117.83,33,occasional
@@ -1591,7 +1591,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 1590,jeffery_nielsen,2023-07-09 00:00:00-07:00,1159.86,41,frequent
 1591,joanne_mccann,2023-12-24 00:00:00-08:00,3955.83,24,frequent
 1592,douglas_rodriguez,2025-04-09 00:00:00-07:00,3920.54,8,occasional
-1593,cynthia_tyler,2024-06-18 00:00:00-07:00,390.32,45,high_value
+1593,cynthia_tyler,2024-06-18 00:00:00-07:00,558.16,45,high_value
 1594,kathryn_watson,2025-04-22 00:00:00-07:00,1762.71,17,high_value
 1595,dustin_bradley,2025-04-23 00:00:00-07:00,1586.12,47,occasional
 1596,elizabeth_black,2024-12-07 00:00:00-08:00,1551.44,12,high_value
@@ -1670,7 +1670,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 1669,derrick_cardenas,2024-03-30 00:00:00-07:00,2997.92,21,high_value
 1670,cynthia_williams,2024-04-22 00:00:00-07:00,1948.43,11,occasional
 1671,amanda_hoffman,2023-11-15 00:00:00-08:00,4952.04,26,occasional
-1672,brady_kelly,2024-06-26 00:00:00-07:00,1097.21,15,high_value
+1672,brady_kelly,2024-06-26 00:00:00-07:00,1191.77,15,high_value
 1673,joshua_miller,2025-07-03 00:00:00-07:00,4739.38,26,occasional
 1674,amanda_hopkins,2024-09-17 00:00:00-07:00,3560.1,49,high_value
 1675,mariah_anderson,2023-12-29 00:00:00-08:00,3494.98,16,occasional
@@ -1820,7 +1820,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 1819,jodi_walker,2024-03-15 00:00:00-07:00,2609.88,33,occasional
 1820,michael_mcdonald,2024-09-30 00:00:00-07:00,3176.63,45,high_value
 1821,amanda_lowe,2025-01-19 00:00:00-08:00,1658.49,22,high_value
-1822,diane_jones,2025-04-02 00:00:00-07:00,328.07,5,high_value
+1822,diane_jones,2025-04-02 00:00:00-07:00,386.65,5,high_value
 1823,debra_lambert,2024-06-05 00:00:00-07:00,4172.4,45,frequent
 1824,gina_smith,2023-08-04 00:00:00-07:00,3283.83,17,occasional
 1825,natasha_murphy,2025-04-23 00:00:00-07:00,4826.64,44,high_value
@@ -1953,7 +1953,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 1952,alexander_silva,2025-01-02 00:00:00-08:00,2183.97,45,frequent
 1953,steven_diaz,2024-07-18 00:00:00-07:00,3393.75,28,occasional
 1954,ashley_pratt,2024-12-14 00:00:00-08:00,4511.41,36,high_value
-1955,joseph_hayes,2024-08-08 00:00:00-07:00,879.23,15,high_value
+1955,joseph_hayes,2024-08-08 00:00:00-07:00,1161.95,15,high_value
 1956,matthew_ritter,2024-12-29 00:00:00-08:00,2236.58,17,occasional
 1957,russell_bullock,2025-04-03 00:00:00-07:00,2200.78,9,high_value
 1958,shannon_best,2024-01-28 00:00:00-08:00,960.27,4,frequent
@@ -1967,7 +1967,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 1966,michael_bradley,2023-08-02 00:00:00-07:00,580.77,26,frequent
 1967,catherine_phillips,2024-01-20 00:00:00-08:00,2294.54,18,frequent
 1968,nicholas_brown,2023-11-23 00:00:00-08:00,1760.87,22,occasional
-1969,julian_patel,2024-05-22 00:00:00-07:00,538.94,23,high_value
+1969,julian_patel,2024-05-22 00:00:00-07:00,743.78,23,high_value
 1970,jacob_ellison,2025-07-02 00:00:00-07:00,519.77,1,high_value
 1971,jill_holt,2024-01-17 00:00:00-08:00,3073.13,18,occasional
 1972,christopher_simpson,2024-06-14 00:00:00-07:00,4823.59,47,occasional
@@ -2071,7 +2071,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 2070,casey_jackson,2024-04-27 00:00:00-07:00,266.58,29,frequent
 2071,aaron_garcia,2025-07-05 00:00:00-07:00,463.8,9,frequent
 2072,amanda_ayala,2025-01-05 00:00:00-08:00,1068.18,15,frequent
-2073,christine_lane,2023-09-07 00:00:00-07:00,164.48999999999998,36,high_value
+2073,christine_lane,2023-09-07 00:00:00-07:00,164.49,36,high_value
 2074,laura_fischer,2025-05-11 00:00:00-07:00,164.24,21,occasional
 2075,ana_mccullough,2023-12-05 00:00:00-08:00,339.24,14,high_value
 2076,richard_smith,2024-08-01 00:00:00-07:00,2651.93,33,occasional
@@ -2128,7 +2128,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 2127,marisa_riggs,2025-01-22 00:00:00-08:00,581.43,22,occasional
 2128,karen_williams,2024-07-19 00:00:00-07:00,316.46,3,occasional
 2129,hannah_smith,2023-11-20 00:00:00-08:00,666.01,48,occasional
-2130,michael_ramsey,2024-07-03 00:00:00-07:00,336.26,15,occasional
+2130,michael_ramsey,2024-07-03 00:00:00-07:00,634.18,15,occasional
 2131,jessica_johnson,2025-02-28 00:00:00-08:00,3278.61,10,occasional
 2132,michael_reyes,2025-04-06 00:00:00-07:00,1118.09,37,high_value
 2133,thomas_dominguez,2023-08-26 00:00:00-07:00,4459.51,5,high_value
@@ -2151,7 +2151,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 2150,kathleen_bradford,2023-07-07 00:00:00-07:00,4937.24,21,occasional
 2151,sharon_mccarty,2024-01-23 00:00:00-08:00,4117.09,31,frequent
 2152,dale_jones,2024-08-27 00:00:00-07:00,3337.02,41,frequent
-2153,glenda_jackson,2025-02-13 00:00:00-08:00,489.52,16,frequent
+2153,glenda_jackson,2025-02-13 00:00:00-08:00,426.87,16,frequent
 2154,edward_curtis,2024-01-09 00:00:00-08:00,2814.21,16,frequent
 2155,tyler_carlson,2025-04-18 00:00:00-07:00,4357.61,35,frequent
 2156,jennifer_little,2025-01-08 00:00:00-08:00,2617.57,14,high_value
@@ -2185,7 +2185,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 2184,andrea_walker,2024-12-11 00:00:00-08:00,2845.37,44,occasional
 2185,ryan_paul,2025-03-27 00:00:00-07:00,3222.48,11,high_value
 2186,alejandro_miranda,2024-09-11 00:00:00-07:00,1649.15,40,high_value
-2187,cynthia_thomas,2023-08-04 00:00:00-07:00,142.47,40,high_value
+2187,cynthia_thomas,2023-08-04 00:00:00-07:00,176.0,40,high_value
 2188,brittney_jenkins,2023-09-06 00:00:00-07:00,1328.91,3,frequent
 2189,christopher_bennett,2024-11-05 00:00:00-08:00,413.88,16,high_value
 2190,veronica_johnson,2023-08-11 00:00:00-07:00,1968.07,25,high_value
@@ -2217,7 +2217,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 2216,christine_porter,2024-11-03 00:00:00-07:00,3851.18,48,occasional
 2217,briana_cobb,2025-04-24 00:00:00-07:00,3205.1,19,high_value
 2218,lee_lewis,2024-01-28 00:00:00-08:00,4653.97,40,occasional
-2219,paula_fischer,2023-09-05 00:00:00-07:00,677.94,14,frequent
+2219,paula_fischer,2023-09-05 00:00:00-07:00,258.22,14,frequent
 2220,michael_hawkins,2023-09-16 00:00:00-07:00,1237.29,38,occasional
 2221,ellen_crane,2024-02-17 00:00:00-08:00,4351.39,47,frequent
 2222,roger_smith,2024-06-20 00:00:00-07:00,3910.32,47,occasional
@@ -2225,7 +2225,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 2224,lisa_mercado,2023-07-15 00:00:00-07:00,2576.12,16,high_value
 2225,molly_mitchell,2024-01-24 00:00:00-08:00,112.56,3,frequent
 2226,william_jones_md,2023-12-17 00:00:00-08:00,4580.53,33,occasional
-2227,melinda_murphy,2023-09-10 00:00:00-07:00,571.15,6,frequent
+2227,melinda_murphy,2023-09-10 00:00:00-07:00,624.35,6,frequent
 2228,mary_garcia,2024-11-19 00:00:00-08:00,3480.73,1,frequent
 2229,dustin_ray,2023-12-30 00:00:00-08:00,4125.32,40,frequent
 2230,nicole_beasley,2024-04-21 00:00:00-07:00,283.85,42,frequent
@@ -2327,7 +2327,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 2326,mr_mark_rodriguez,2024-05-05 00:00:00-07:00,4238.97,46,occasional
 2327,william_reese,2025-04-04 00:00:00-07:00,4065.69,21,frequent
 2328,robert_miller,2024-04-10 00:00:00-07:00,3038.54,5,occasional
-2329,mary_stevens,2024-07-11 00:00:00-07:00,455.71000000000004,28,frequent
+2329,mary_stevens,2024-07-11 00:00:00-07:00,583.31,28,frequent
 2330,stephanie_jones,2025-06-23 00:00:00-07:00,902.08,39,frequent
 2331,sonya_sullivan,2024-10-10 00:00:00-07:00,100.23,30,frequent
 2332,keith_russell,2024-03-12 00:00:00-07:00,1703.71,24,high_value
@@ -2413,14 +2413,14 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 2412,kara_turner,2024-05-04 00:00:00-07:00,2274.31,33,
 2413,erin_mccarthy,2024-08-22 00:00:00-07:00,2163.88,18,occasional
 2414,mark_reynolds,2023-10-25 00:00:00-07:00,4446.5,42,high_value
-2415,claire_rich,2025-02-13 00:00:00-08:00,370.69,22,high_value
+2415,claire_rich,2025-02-13 00:00:00-08:00,361.09,22,high_value
 2416,thomas_murray,2024-10-08 00:00:00-07:00,4590.92,11,
 2417,samantha_meyer,2025-02-18 00:00:00-08:00,3332.42,9,frequent
 2418,kevin_miller,2024-07-12 00:00:00-07:00,1680.12,22,occasional
 2419,samuel_wheeler,2025-06-16 00:00:00-07:00,2602.91,30,frequent
 2420,mark_mccoy,2025-06-17 00:00:00-07:00,298.94,23,high_value
 2421,susan_carpenter,2025-02-03 00:00:00-08:00,2288.67,38,frequent
-2422,cheryl_martinez,2024-08-04 00:00:00-07:00,444.3,21,frequent
+2422,cheryl_martinez,2024-08-04 00:00:00-07:00,497.08,21,frequent
 2423,michael_hernandez,2025-03-19 00:00:00-07:00,2011.65,26,occasional
 2424,jason_hopkins,2024-10-26 00:00:00-07:00,3736.13,21,frequent
 2425,frank_caldwell,2024-08-20 00:00:00-07:00,1970.78,33,high_value
@@ -2428,13 +2428,13 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 2427,james_young,2024-12-06 00:00:00-08:00,3732.73,20,occasional
 2428,randall_smith,2023-07-26 00:00:00-07:00,4104.93,41,frequent
 2429,sarah_williamson,2024-05-01 00:00:00-07:00,3957.36,13,frequent
-2430,christina_shelton,2025-01-04 00:00:00-08:00,219.28,19,occasional
+2430,christina_shelton,2025-01-04 00:00:00-08:00,501.24,19,occasional
 2431,timothy_wilkerson,2024-09-17 00:00:00-07:00,3141.27,26,occasional
 2432,angela_flores,2024-04-03 00:00:00-07:00,2117.18,2,frequent
 2433,eric_baldwin,2024-01-07 00:00:00-08:00,4533.53,29,occasional
 2434,jennifer_ramirez,2023-11-10 00:00:00-08:00,2405.65,49,frequent
 2435,brandon_williams,2024-01-02 00:00:00-08:00,4911.88,22,frequent
-2436,christie_franklin,2024-11-30 00:00:00-08:00,57.849999999999994,28,occasional
+2436,christie_franklin,2024-11-30 00:00:00-08:00,57.85,28,occasional
 2437,matthew_mcguire_jr,2024-04-12 00:00:00-07:00,1525.22,26,high_value
 2438,samuel_nielsen,2024-03-30 00:00:00-07:00,3228.88,7,high_value
 2439,helen_taylor,2025-01-29 00:00:00-08:00,4169.65,30,high_value
@@ -2443,7 +2443,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 2442,nancy_johnson,2024-12-10 00:00:00-08:00,1244.86,11,occasional
 2443,willie_jackson,2025-06-29 00:00:00-07:00,2701.28,43,high_value
 2444,dawn_jones,2024-11-30 00:00:00-08:00,3796.16,41,frequent
-2445,austin_mcintosh,2024-09-15 00:00:00-07:00,202.23000000000002,0,frequent
+2445,austin_mcintosh,2024-09-15 00:00:00-07:00,339.19,0,frequent
 2446,jennifer_green,2024-08-29 00:00:00-07:00,1419.51,4,
 2447,danielle_martinez,2023-10-02 00:00:00-07:00,2036.65,1,high_value
 2448,tiffany_johnson,2025-05-14 00:00:00-07:00,2780.51,1,high_value
@@ -2468,7 +2468,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 2467,jamie_evans,2023-12-02 00:00:00-08:00,1744.43,27,occasional
 2468,heidi_brown,2025-03-04 00:00:00-08:00,598.92,23,high_value
 2469,anthony_hoffman,2023-07-18 00:00:00-07:00,506.72,24,frequent
-2470,dustin_gonzales,2023-11-24 00:00:00-08:00,825.72,17,high_value
+2470,dustin_gonzales,2023-11-24 00:00:00-08:00,1162.72,17,high_value
 2471,ryan_vasquez,2023-12-27 00:00:00-08:00,1794.36,5,occasional
 2472,robert_mitchell,2023-07-23 00:00:00-07:00,4595.46,15,frequent
 2473,christine_sawyer,2023-12-25 00:00:00-08:00,1301.85,45,occasional
@@ -2534,7 +2534,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 2533,allison_roberts,2024-04-19 00:00:00-07:00,220.95,29,frequent
 2534,joseph_craig,2024-12-22 00:00:00-08:00,4979.96,47,high_value
 2535,donald_mills,2024-04-18 00:00:00-07:00,4805.38,44,frequent
-2536,diane_young,2024-05-03 00:00:00-07:00,19.35,21,high_value
+2536,diane_young,2024-05-03 00:00:00-07:00,38.7,21,high_value
 2537,susan_martinez,2025-03-03 00:00:00-08:00,3673.43,3,frequent
 2538,john_sims,2024-07-14 00:00:00-07:00,2653.13,43,high_value
 2539,anna_hughes,2023-12-07 00:00:00-08:00,481.96,34,high_value
@@ -2542,7 +2542,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 2541,victoria_franco,2023-07-15 00:00:00-07:00,2126.92,15,frequent
 2542,cindy_knight,2024-12-29 00:00:00-08:00,4141.96,21,high_value
 2543,brian_hays,2024-03-12 00:00:00-07:00,925.6,28,high_value
-2544,eric_mcpherson,2023-11-18 00:00:00-08:00,188.2,16,frequent
+2544,eric_mcpherson,2023-11-18 00:00:00-08:00,226.28,16,frequent
 2545,cassie_carr,2025-02-23 00:00:00-08:00,3815.86,25,frequent
 2546,victoria_lee,2024-10-31 00:00:00-07:00,984.84,4,high_value
 2547,kathleen_nichols,2025-06-26 00:00:00-07:00,2694.71,26,high_value
@@ -2556,7 +2556,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 2555,susan_olsen,2024-01-28 00:00:00-08:00,1664.49,30,occasional
 2556,lindsey_pugh,2024-06-11 00:00:00-07:00,3757.36,26,frequent
 2557,jessica_campbell,2024-04-14 00:00:00-07:00,2312.31,41,high_value
-2558,jonathan_crosby,2024-04-29 00:00:00-07:00,196.56,13,occasional
+2558,jonathan_crosby,2024-04-29 00:00:00-07:00,382.27,13,occasional
 2559,cynthia_villegas,2023-09-17 00:00:00-07:00,1131.92,22,occasional
 2560,cory_campbell,2023-09-01 00:00:00-07:00,2079.36,1,high_value
 2561,amy_williams,2024-04-26 00:00:00-07:00,286.63,46,occasional
@@ -2568,7 +2568,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 2567,donna_curry,2023-09-18 00:00:00-07:00,4534.8,26,occasional
 2568,carolyn_sosa,2024-01-25 00:00:00-08:00,2172.0,29,high_value
 2569,daniel_gonzalez,2024-10-09 00:00:00-07:00,4160.87,31,frequent
-2570,lindsay_buchanan,2025-03-16 00:00:00-07:00,583.95,10,high_value
+2570,lindsay_buchanan,2025-03-16 00:00:00-07:00,860.49,10,high_value
 2571,mary_campbell,2023-10-15 00:00:00-07:00,4767.43,0,frequent
 2572,laura_shepherd,2024-05-25 00:00:00-07:00,788.77,35,occasional
 2573,kristen_moore,2024-03-27 00:00:00-07:00,100.08,14,occasional
@@ -2594,7 +2594,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 2593,janet_jones,2024-12-16 00:00:00-08:00,1857.98,47,occasional
 2594,nathan_morales,2024-01-07 00:00:00-08:00,4890.54,27,frequent
 2595,christopher_mayer,2025-02-25 00:00:00-08:00,1697.04,20,occasional
-2596,kathy_harrison,2024-03-04 00:00:00-08:00,306.19,46,frequent
+2596,kathy_harrison,2024-03-04 00:00:00-08:00,337.63,46,frequent
 2597,maurice_porter,2024-09-01 00:00:00-07:00,1651.03,3,high_value
 2598,brandi_bentley,2024-06-02 00:00:00-07:00,4705.8,11,occasional
 2599,duane_kennedy,2024-05-25 00:00:00-07:00,235.85,16,frequent
@@ -2627,7 +2627,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 2626,frank_hart,2024-03-10 00:00:00-08:00,4862.6,9,occasional
 2627,lisa_morales,2025-01-22 00:00:00-08:00,3042.57,39,occasional
 2628,timothy_maddox,2023-11-01 00:00:00-07:00,4771.8,35,occasional
-2629,caleb_carey,2025-06-05 00:00:00-07:00,202.19,4,frequent
+2629,caleb_carey,2025-06-05 00:00:00-07:00,243.42,4,frequent
 2630,sandra_payne,2024-01-12 00:00:00-08:00,4594.3,35,occasional
 2631,cheryl_bean,2024-05-08 00:00:00-07:00,1021.65,10,frequent
 2632,amber_ray,2025-01-29 00:00:00-08:00,106.81,30,high_value
@@ -2672,7 +2672,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 2671,tyler_fisher,2024-08-09 00:00:00-07:00,4153.62,36,high_value
 2672,steve_johnston,2024-01-31 00:00:00-08:00,4552.61,31,occasional
 2673,ms_tamara_nguyen,2024-03-21 00:00:00-07:00,3170.42,24,frequent
-2674,sierra_anderson,2023-07-14 00:00:00-07:00,135.64,22,high_value
+2674,sierra_anderson,2023-07-14 00:00:00-07:00,167.2,22,high_value
 2675,christy_davis,2025-06-29 00:00:00-07:00,353.55,21,frequent
 2676,amanda_sparks,2024-03-11 00:00:00-07:00,3490.71,12,frequent
 2677,evan_levy,2024-02-11 00:00:00-08:00,576.04,32,high_value
@@ -2744,7 +2744,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 2743,michael_smith,2025-01-21 00:00:00-08:00,3085.71,40,high_value
 2744,carlos_patterson,2023-08-04 00:00:00-07:00,350.41,23,frequent
 2745,janice_cruz,2024-05-15 00:00:00-07:00,4568.02,35,frequent
-2746,jason_perry,2023-11-09 00:00:00-08:00,217.52,18,high_value
+2746,jason_perry,2023-11-09 00:00:00-08:00,307.48,18,high_value
 2747,jake_lara,2024-03-29 00:00:00-07:00,3422.26,13,occasional
 2748,patrick_townsend,2024-10-08 00:00:00-07:00,2504.22,29,high_value
 2749,richard_townsend,2024-06-19 00:00:00-07:00,3652.0,3,high_value
@@ -2783,7 +2783,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 2782,wendy_davis,2024-02-13 00:00:00-08:00,486.67,19,high_value
 2783,mr_anthony_howell,2024-06-26 00:00:00-07:00,4519.75,42,occasional
 2784,marie_alvarez,2024-11-28 00:00:00-08:00,1484.01,23,frequent
-2785,robert_gomez,2024-10-30 00:00:00-07:00,640.94,18,frequent
+2785,robert_gomez,2024-10-30 00:00:00-07:00,914.09,18,frequent
 2786,heather_murphy,2024-10-06 00:00:00-07:00,801.66,10,high_value
 2787,debbie_snyder,2023-07-08 00:00:00-07:00,4889.23,44,occasional
 2788,becky_jackson,2023-12-26 00:00:00-08:00,2304.03,8,high_value
@@ -2871,7 +2871,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 2870,rick_harris,2024-03-06 00:00:00-08:00,317.35,20,high_value
 2871,james_murphy,2024-01-15 00:00:00-08:00,3577.19,19,occasional
 2872,crystal_king,2024-02-09 00:00:00-08:00,3382.71,3,high_value
-2873,kenneth_wang,2024-11-28 00:00:00-08:00,599.78,25,occasional
+2873,kenneth_wang,2024-11-28 00:00:00-08:00,990.66,25,occasional
 2874,gary_johnston,2023-10-21 00:00:00-07:00,671.71,15,occasional
 2875,jason_turner,2024-10-27 00:00:00-07:00,1551.51,28,high_value
 2876,megan_williams,2024-06-27 00:00:00-07:00,1923.67,1,frequent
@@ -2893,7 +2893,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 2892,donna_beck,2025-04-27 00:00:00-07:00,261.38,31,high_value
 2893,jesse_price,2023-07-16 00:00:00-07:00,4898.99,4,occasional
 2894,michael_young,2023-09-01 00:00:00-07:00,3506.4,43,
-2895,claudia_hall,2025-02-25 00:00:00-08:00,268.68,44,frequent
+2895,claudia_hall,2025-02-25 00:00:00-08:00,288.44,44,frequent
 2896,stacy_smith,2024-09-22 00:00:00-07:00,4385.55,45,occasional
 2897,kevin_mack,2023-10-24 00:00:00-07:00,4927.56,49,frequent
 2898,ryan_burke,2023-09-13 00:00:00-07:00,3302.97,30,high_value
@@ -3076,8 +3076,8 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 3075,susan_morales,2024-02-01 00:00:00-08:00,2404.7,24,frequent
 3076,brian_martin,2024-01-02 00:00:00-08:00,709.26,32,high_value
 3077,alvin_padilla,2023-07-12 00:00:00-07:00,3214.78,14,occasional
-3078,terry_banks,2024-09-17 00:00:00-07:00,395.46,26,high_value
-3079,wanda_chan,2024-09-29 00:00:00-07:00,349.08000000000004,25,high_value
+3078,terry_banks,2024-09-17 00:00:00-07:00,553.2,26,high_value
+3079,wanda_chan,2024-09-29 00:00:00-07:00,349.08,25,high_value
 3080,adam_clark,2024-04-17 00:00:00-07:00,2825.7,22,high_value
 3081,jeff_lopez,2024-04-23 00:00:00-07:00,348.81,14,high_value
 3082,john_bradley_dvm,2024-12-30 00:00:00-08:00,546.0,32,high_value
@@ -3190,10 +3190,10 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 3189,curtis_williams,2024-02-04 00:00:00-08:00,3194.12,27,high_value
 3190,isaac_guzman,2024-01-13 00:00:00-08:00,1801.47,5,occasional
 3191,brandon_jackson,2023-11-13 00:00:00-08:00,2108.93,16,occasional
-3192,edward_robinson,2024-10-04 00:00:00-07:00,342.1,32,occasional
+3192,edward_robinson,2024-10-04 00:00:00-07:00,392.2,32,occasional
 3193,devin_wilson,2023-07-24 00:00:00-07:00,1441.34,20,occasional
 3194,julie_rodgers,2025-03-01 00:00:00-08:00,4067.74,22,frequent
-3195,clifford_beltran,2025-07-02 00:00:00-07:00,545.67,44,frequent
+3195,clifford_beltran,2025-07-02 00:00:00-07:00,613.57,44,frequent
 3196,veronica_nunez,2024-10-10 00:00:00-07:00,4700.2,33,occasional
 3197,gary_munoz,2024-09-09 00:00:00-07:00,2771.14,1,frequent
 3198,cindy_mullen,2023-10-09 00:00:00-07:00,4508.43,6,high_value
@@ -3211,7 +3211,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 3210,danielle_watkins,2025-06-14 00:00:00-07:00,4743.12,15,frequent
 3211,michael_grant,2025-06-08 00:00:00-07:00,3193.2,6,high_value
 3212,chloe_morris,2023-07-13 00:00:00-07:00,1525.7,39,high_value
-3213,karen_maldonado,2025-04-10 00:00:00-07:00,207.67,6,frequent
+3213,karen_maldonado,2025-04-10 00:00:00-07:00,265.82,6,frequent
 3214,brittany_lewis,2025-05-28 00:00:00-07:00,1620.82,9,high_value
 3215,bryan_tran,2023-07-22 00:00:00-07:00,4860.62,24,
 3216,benjamin_henderson,2025-01-14 00:00:00-08:00,1113.08,41,occasional
@@ -3232,7 +3232,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 3231,mackenzie_rodriguez_dds,2024-04-22 00:00:00-07:00,2244.88,7,frequent
 3232,mallory_nicholson,2024-04-10 00:00:00-07:00,4599.33,21,frequent
 3233,rachel_smith,2024-06-17 00:00:00-07:00,4259.36,41,occasional
-3234,dr_edward_adams,2023-07-18 00:00:00-07:00,100.6,4,occasional
+3234,dr_edward_adams,2023-07-18 00:00:00-07:00,201.2,4,occasional
 3235,sheila_pitts,2025-01-03 00:00:00-08:00,1751.17,27,occasional
 3236,kara_jordan_md,2023-09-16 00:00:00-07:00,3671.36,29,frequent
 3237,karen_johnson,2025-03-17 00:00:00-07:00,4042.23,46,high_value
@@ -3258,7 +3258,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 3257,patrick_clark,2025-01-20 00:00:00-08:00,1951.77,40,frequent
 3258,gary_martinez,2025-01-19 00:00:00-08:00,1625.65,34,occasional
 3259,victor_friedman,2023-08-05 00:00:00-07:00,1079.45,42,frequent
-3260,john_nguyen,2025-03-28 00:00:00-07:00,4030.03,40,frequent
+3260,john_nguyen,2025-03-28 00:00:00-07:00,1124.44,40,frequent
 3261,christina_long,2025-06-08 00:00:00-07:00,740.37,49,occasional
 3262,angela_hernandez,2023-09-30 00:00:00-07:00,433.27,9,occasional
 3263,christopher_newton,2023-08-15 00:00:00-07:00,2717.23,23,occasional
@@ -3327,7 +3327,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 3326,brooke_strickland,2025-03-09 00:00:00-08:00,1856.86,14,high_value
 3327,elizabeth_hodges,2025-07-02 00:00:00-07:00,2204.41,28,frequent
 3328,robert_ibarra,2025-07-02 00:00:00-07:00,4956.87,20,
-3329,tiffany_fitzgerald,2024-12-22 00:00:00-08:00,169.07,49,frequent
+3329,tiffany_fitzgerald,2024-12-22 00:00:00-08:00,184.91,49,frequent
 3330,michelle_fisher,2024-02-05 00:00:00-08:00,2401.07,4,high_value
 3331,melinda_campbell,2025-02-06 00:00:00-08:00,596.13,4,high_value
 3332,katherine_howard,2024-11-10 00:00:00-08:00,1265.64,17,occasional
@@ -3420,7 +3420,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 3419,kim_mitchell,2023-07-11 00:00:00-07:00,3380.29,34,frequent
 3420,adam_hobbs,2023-10-26 00:00:00-07:00,2341.76,34,frequent
 3421,christopher_solis,2024-11-05 00:00:00-08:00,723.72,5,occasional
-3422,susan_lowe,2025-02-26 00:00:00-08:00,208.07999999999998,24,occasional
+3422,susan_lowe,2025-02-26 00:00:00-08:00,208.08,24,occasional
 3423,randy_brown,2024-02-21 00:00:00-08:00,804.67,22,high_value
 3424,edward_perez,2023-09-20 00:00:00-07:00,2243.62,27,high_value
 3425,kimberly_jones,2024-11-03 00:00:00-07:00,1954.27,40,
@@ -3440,7 +3440,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 3439,lisa_chavez,2024-03-27 00:00:00-07:00,4788.05,12,high_value
 3440,kimberly_wilson,2024-12-20 00:00:00-08:00,514.3,20,frequent
 3441,lori_walker,2025-03-18 00:00:00-07:00,2978.45,15,occasional
-3442,lauren_trevino,2024-02-09 00:00:00-08:00,208.53,14,frequent
+3442,lauren_trevino,2024-02-09 00:00:00-08:00,417.06,14,frequent
 3443,brent_robbins,2023-10-24 00:00:00-07:00,4895.38,1,high_value
 3444,stephanie_hurley,2024-02-07 00:00:00-08:00,4181.62,4,high_value
 3445,kathleen_case,2024-09-08 00:00:00-07:00,4261.81,16,
@@ -3555,10 +3555,10 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 3554,julie_mooney,2024-07-10 00:00:00-07:00,609.8,1,
 3555,lee_wagner,2023-09-10 00:00:00-07:00,4326.58,21,
 3556,catherine_chen,2024-07-30 00:00:00-07:00,2725.14,14,
-3557,jackie_cunningham,2024-10-02 00:00:00-07:00,258.33,27,frequent
+3557,jackie_cunningham,2024-10-02 00:00:00-07:00,448.68,27,frequent
 3558,samantha_becker,2024-11-08 00:00:00-08:00,4482.09,24,frequent
 3559,brent_shaw,2025-02-19 00:00:00-08:00,4750.05,49,high_value
-3560,joseph_bell,2025-01-05 00:00:00-08:00,309.11,22,occasional
+3560,joseph_bell,2025-01-05 00:00:00-08:00,427.08,22,occasional
 3561,jennifer_henry,2024-01-19 00:00:00-08:00,4043.56,20,occasional
 3562,dan_miller,2024-06-05 00:00:00-07:00,293.44,17,high_value
 3563,carlos_lowery,2025-04-24 00:00:00-07:00,3930.21,32,frequent
@@ -3595,7 +3595,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 3594,erica_brown,2025-03-18 00:00:00-07:00,3914.01,30,frequent
 3595,holly_bradley,2023-07-29 00:00:00-07:00,634.07,14,high_value
 3596,jason_morales,2024-08-10 00:00:00-07:00,947.32,27,high_value
-3597,gary_novak,2024-11-13 00:00:00-08:00,749.76,43,occasional
+3597,gary_novak,2024-11-13 00:00:00-08:00,903.28,43,occasional
 3598,erica_white,2025-04-10 00:00:00-07:00,2194.1,3,frequent
 3599,craig_hampton,2025-02-22 00:00:00-08:00,323.75,29,occasional
 3600,ashley_evans,2025-06-30 00:00:00-07:00,4183.81,8,occasional
@@ -3606,7 +3606,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 3605,julie_bates,2024-07-11 00:00:00-07:00,2152.57,1,occasional
 3606,angela_kerr,2024-08-28 00:00:00-07:00,3479.03,46,frequent
 3607,timothy_turner,2024-10-30 00:00:00-07:00,844.57,37,frequent
-3608,lisa_avery,2024-12-04 00:00:00-08:00,567.53,36,occasional
+3608,lisa_avery,2024-12-04 00:00:00-08:00,660.01,36,occasional
 3609,todd_mack,2023-12-26 00:00:00-08:00,2968.52,21,occasional
 3610,amanda_gilbert,2023-08-31 00:00:00-07:00,4092.22,37,frequent
 3611,jesse_williams,2025-04-18 00:00:00-07:00,3935.06,6,high_value
@@ -3622,7 +3622,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 3621,erik_perez,2024-11-08 00:00:00-08:00,1599.03,16,frequent
 3622,karen_fisher,2025-05-23 00:00:00-07:00,3827.37,21,high_value
 3623,theresa_martin,2024-12-17 00:00:00-08:00,3214.61,18,frequent
-3624,kevin_martin,2024-01-19 00:00:00-08:00,189.35000000000002,10,frequent
+3624,kevin_martin,2024-01-19 00:00:00-08:00,205.15,10,frequent
 3625,anna_davis,2023-11-26 00:00:00-08:00,1660.51,2,frequent
 3626,amy_mcdaniel,2024-04-19 00:00:00-07:00,834.35,26,high_value
 3627,james_jones,2025-04-21 00:00:00-07:00,3509.94,29,frequent
@@ -3638,7 +3638,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 3637,robert_flores,2024-10-12 00:00:00-07:00,4280.67,38,
 3638,tyler_medina,2024-07-29 00:00:00-07:00,199.52,36,high_value
 3639,peter_cooper,2024-04-22 00:00:00-07:00,809.71,30,occasional
-3640,michael_lester,2025-06-16 00:00:00-07:00,507.89,9,high_value
+3640,michael_lester,2025-06-16 00:00:00-07:00,737.03,9,high_value
 3641,christine_cole,2023-11-12 00:00:00-08:00,2758.14,31,occasional
 3642,dawn_gibson,2024-10-10 00:00:00-07:00,929.59,12,high_value
 3643,katrina_powers,2025-02-07 00:00:00-08:00,3880.0,32,frequent
@@ -3678,7 +3678,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 3677,cassidy_wells,2024-01-09 00:00:00-08:00,100.49,30,occasional
 3678,zachary_alvarez,2025-02-01 00:00:00-08:00,2343.36,44,occasional
 3679,amanda_escobar,2023-10-06 00:00:00-07:00,1131.8,26,frequent
-3680,mark_warren,2025-06-25 00:00:00-07:00,389.24,31,frequent
+3680,mark_warren,2025-06-25 00:00:00-07:00,395.56,31,frequent
 3681,shelley_hanson,2024-09-24 00:00:00-07:00,3933.68,13,high_value
 3682,sandra_cabrera,2024-09-20 00:00:00-07:00,4531.85,0,frequent
 3683,dawn_young,2025-05-23 00:00:00-07:00,2838.42,44,frequent
@@ -3707,7 +3707,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 3706,karen_proctor,2024-04-24 00:00:00-07:00,2584.53,10,occasional
 3707,whitney_graham,2024-06-22 00:00:00-07:00,1592.13,39,frequent
 3708,david_mckinney,2024-11-23 00:00:00-08:00,951.65,48,frequent
-3709,kathryn_walker,2024-05-25 00:00:00-07:00,337.54,27,occasional
+3709,kathryn_walker,2024-05-25 00:00:00-07:00,386.41,27,occasional
 3710,barbara_blackburn_md,2023-10-27 00:00:00-07:00,3712.35,21,frequent
 3711,erin_williamson,2024-07-16 00:00:00-07:00,715.49,17,high_value
 3712,faith_long,2023-12-09 00:00:00-08:00,3364.36,28,frequent
@@ -3823,7 +3823,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 3822,lori_cooley,2024-09-19 00:00:00-07:00,4305.22,45,frequent
 3823,mrs_chelsey_sharp,2024-07-19 00:00:00-07:00,1791.47,5,high_value
 3824,stephen_schmidt,2023-09-11 00:00:00-07:00,2389.64,27,frequent
-3825,kevin_soto,2023-11-01 00:00:00-07:00,523.1800000000001,8,occasional
+3825,kevin_soto,2023-11-01 00:00:00-07:00,523.18,8,occasional
 3826,sheila_woods,2024-05-28 00:00:00-07:00,3376.38,7,frequent
 3827,emily_shaw,2025-02-08 00:00:00-08:00,2679.33,33,high_value
 3828,michael_stewart,2024-01-23 00:00:00-08:00,3361.72,25,high_value
@@ -3855,7 +3855,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 3854,amy_mathis,2023-10-08 00:00:00-07:00,1685.47,47,frequent
 3855,logan_harris,2024-08-25 00:00:00-07:00,2406.1,5,occasional
 3856,mr_stephen_williams,2025-02-05 00:00:00-08:00,3360.8,7,high_value
-3857,cameron_harris,2024-06-23 00:00:00-07:00,378.5,20,frequent
+3857,cameron_harris,2024-06-23 00:00:00-07:00,1692.39,20,frequent
 3858,robert_bray,2024-03-23 00:00:00-07:00,3049.66,8,occasional
 3859,peter_schmidt,2024-06-24 00:00:00-07:00,2114.82,22,high_value
 3860,vanessa_berry,2023-08-23 00:00:00-07:00,3830.78,45,frequent
@@ -3879,13 +3879,13 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 3878,james_ryan,2025-01-22 00:00:00-08:00,910.63,9,high_value
 3879,stephen_campbell,2025-05-13 00:00:00-07:00,2876.28,38,frequent
 3880,juan_hardin,2025-06-09 00:00:00-07:00,1234.11,9,high_value
-3881,yolanda_martinez,2023-12-27 00:00:00-08:00,575.0,46,occasional
+3881,yolanda_martinez,2023-12-27 00:00:00-08:00,746.0,46,occasional
 3882,corey_middleton,2024-08-23 00:00:00-07:00,4434.7,20,occasional
 3883,teresa_rodriguez,2023-10-03 00:00:00-07:00,1781.97,37,high_value
 3884,shannon_mueller,2024-09-03 00:00:00-07:00,250.82,49,occasional
 3885,christopher_mckay,2025-02-27 00:00:00-08:00,2756.4,45,
 3886,dakota_palmer,2025-03-19 00:00:00-07:00,722.02,43,frequent
-3887,jeffrey_miller,2024-10-08 00:00:00-07:00,445.12,5,high_value
+3887,jeffrey_miller,2024-10-08 00:00:00-07:00,600.24,5,high_value
 3888,michelle_smith,2025-05-12 00:00:00-07:00,2429.76,11,frequent
 3889,christian_moore,2023-10-18 00:00:00-07:00,1169.39,12,frequent
 3890,daniel_caldwell,2023-11-26 00:00:00-08:00,3139.97,48,frequent
@@ -3899,7 +3899,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 3898,patricia_berg,2024-03-28 00:00:00-07:00,162.37,20,high_value
 3899,sara_lopez,2024-05-26 00:00:00-07:00,3953.5,44,occasional
 3900,angela_kerr,2024-05-27 00:00:00-07:00,3909.24,10,occasional
-3901,natalie_johnson,2024-11-10 00:00:00-08:00,254.0,15,high_value
+3901,natalie_johnson,2024-11-10 00:00:00-08:00,508.0,15,high_value
 3902,john_mayer,2025-05-16 00:00:00-07:00,1941.64,10,high_value
 3903,dr_allison_moody,2023-11-12 00:00:00-08:00,320.59,36,frequent
 3904,brenda_miranda,2024-11-19 00:00:00-08:00,1579.97,44,occasional
@@ -3908,7 +3908,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 3907,shannon_mitchell,2025-05-09 00:00:00-07:00,1538.82,27,frequent
 3908,james_smith,2024-04-29 00:00:00-07:00,4241.77,18,occasional
 3909,rita_warren,2024-06-01 00:00:00-07:00,203.17,29,occasional
-3910,emily_little,2023-12-11 00:00:00-08:00,123.8,42,occasional
+3910,emily_little,2023-12-11 00:00:00-08:00,193.55,42,occasional
 3911,dennis_wood,2025-05-14 00:00:00-07:00,4400.7,42,high_value
 3912,sandra_gardner,2023-07-12 00:00:00-07:00,3211.54,40,frequent
 3913,bradley_gibson,2024-09-23 00:00:00-07:00,4592.27,19,frequent
@@ -4003,7 +4003,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 4002,stephanie_andrade,2024-10-30 00:00:00-07:00,2727.29,24,high_value
 4003,michael_young,2024-08-16 00:00:00-07:00,831.5,32,high_value
 4004,courtney_willis,2024-12-15 00:00:00-08:00,873.98,14,high_value
-4005,michael_santiago,2023-07-27 00:00:00-07:00,505.88000000000005,41,frequent
+4005,michael_santiago,2023-07-27 00:00:00-07:00,643.01,41,frequent
 4006,jennifer_fisher,2024-05-28 00:00:00-07:00,872.01,10,occasional
 4007,sheena_prince,2024-05-31 00:00:00-07:00,4525.84,12,occasional
 4008,carla_jones,2024-04-24 00:00:00-07:00,3554.77,3,frequent
@@ -4054,7 +4054,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 4053,jessica_rodriguez,2024-02-26 00:00:00-08:00,472.19,37,high_value
 4054,kelsey_reed,2023-11-12 00:00:00-08:00,2974.96,49,high_value
 4055,michael_buckley,2025-05-22 00:00:00-07:00,1657.12,35,high_value
-4056,alexandra_williams,2025-03-06 00:00:00-08:00,122.63000000000001,49,high_value
+4056,alexandra_williams,2025-03-06 00:00:00-08:00,58.03,49,high_value
 4057,jamie_rich,2023-09-17 00:00:00-07:00,1531.28,6,occasional
 4058,debra_moran,2024-10-26 00:00:00-07:00,1427.04,15,occasional
 4059,karen_harris,2024-06-24 00:00:00-07:00,3502.1,6,occasional
@@ -4078,7 +4078,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 4077,jonathan_ramirez,2025-01-03 00:00:00-08:00,4371.37,11,frequent
 4078,ronnie_nichols,2023-08-10 00:00:00-07:00,3445.73,45,occasional
 4079,william_hill,2024-12-01 00:00:00-08:00,1749.01,5,occasional
-4080,lori_hamilton,2024-11-26 00:00:00-08:00,472.26,6,occasional
+4080,lori_hamilton,2024-11-26 00:00:00-08:00,685.01,6,occasional
 4081,david_shepherd,2024-04-04 00:00:00-07:00,1043.64,19,occasional
 4082,michele_phillips,2024-09-15 00:00:00-07:00,3674.95,4,frequent
 4083,ruth_nichols,2024-05-01 00:00:00-07:00,1314.84,38,occasional
@@ -4093,7 +4093,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 4092,jason_craig,2024-02-23 00:00:00-08:00,4894.65,41,high_value
 4093,douglas_alexander,2024-05-04 00:00:00-07:00,2232.14,13,occasional
 4094,martin_gonzalez,2025-02-16 00:00:00-08:00,3093.86,32,high_value
-4095,angela_miller,2023-07-10 00:00:00-07:00,72.46000000000001,49,frequent
+4095,angela_miller,2023-07-10 00:00:00-07:00,72.46,49,frequent
 4096,ryan_shaw,2024-08-28 00:00:00-07:00,2161.32,12,occasional
 4097,james_branch,2024-03-31 00:00:00-07:00,4671.96,11,occasional
 4098,emily_ruiz,2024-02-02 00:00:00-08:00,4266.68,24,occasional
@@ -4157,11 +4157,11 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 4156,patricia_joseph,2023-10-18 00:00:00-07:00,3401.47,25,high_value
 4157,stephen_todd,2024-11-06 00:00:00-08:00,220.1,37,high_value
 4158,donald_hood,2024-04-10 00:00:00-07:00,3767.87,3,frequent
-4159,diana_vasquez,2025-05-25 00:00:00-07:00,305.17,17,occasional
+4159,diana_vasquez,2025-05-25 00:00:00-07:00,538.45,17,occasional
 4160,evan_davis,2023-08-12 00:00:00-07:00,1129.15,6,frequent
 4161,tammy_patterson,2023-07-13 00:00:00-07:00,1181.94,28,high_value
 4162,dana_brown,2025-02-17 00:00:00-08:00,1900.25,48,frequent
-4163,jon_joseph,2023-07-17 00:00:00-07:00,147.28,14,occasional
+4163,jon_joseph,2023-07-17 00:00:00-07:00,153.88,14,occasional
 4164,anthony_barron,2024-02-08 00:00:00-08:00,2153.04,16,high_value
 4165,jerry_mccullough,2024-06-05 00:00:00-07:00,1592.04,22,
 4166,lindsay_harvey,2024-06-22 00:00:00-07:00,4712.75,19,occasional
@@ -4187,7 +4187,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 4186,marcus_chan,2023-08-20 00:00:00-07:00,646.02,43,frequent
 4187,james_dudley,2025-02-04 00:00:00-08:00,2155.24,22,high_value
 4188,jeffrey_campos,2024-08-21 00:00:00-07:00,1120.91,39,frequent
-4189,nicholas_gardner,2025-04-19 00:00:00-07:00,462.53,44,occasional
+4189,nicholas_gardner,2025-04-19 00:00:00-07:00,755.78,44,occasional
 4190,daniel_hartman,2025-04-14 00:00:00-07:00,3446.84,12,
 4191,felicia_padilla,2023-09-09 00:00:00-07:00,1705.35,14,frequent
 4192,rodney_guerrero,2024-03-08 00:00:00-08:00,389.08,35,
@@ -4220,11 +4220,11 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 4219,shelby_holloway,2025-06-09 00:00:00-07:00,1796.54,25,frequent
 4220,joseph_baldwin,2024-08-14 00:00:00-07:00,4636.18,25,frequent
 4221,marcus_cooley,2023-11-15 00:00:00-08:00,3617.27,48,high_value
-4222,michael_reyes,2024-03-31 00:00:00-07:00,210.01,7,high_value
+4222,michael_reyes,2024-03-31 00:00:00-07:00,272.53,7,high_value
 4223,juan_vega,2024-01-04 00:00:00-08:00,557.42,1,occasional
 4224,ricky_smith,2024-08-06 00:00:00-07:00,4594.1,46,high_value
 4225,daniel_jensen,2024-07-10 00:00:00-07:00,3869.82,9,frequent
-4226,laura_gonzales,2025-01-22 00:00:00-08:00,294.27,30,occasional
+4226,laura_gonzales,2025-01-22 00:00:00-08:00,539.26,30,occasional
 4227,ms_kerri_horton,2023-12-18 00:00:00-08:00,1140.9,41,high_value
 4228,jeffrey_serrano,2024-01-06 00:00:00-08:00,1603.37,18,frequent
 4229,michael_sullivan,2023-10-13 00:00:00-07:00,1290.62,25,high_value
@@ -4312,7 +4312,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 4311,jeremiah_lewis,2024-01-30 00:00:00-08:00,3593.41,29,frequent
 4312,david_gomez,2023-10-26 00:00:00-07:00,2094.25,43,occasional
 4313,donna_gray,2024-05-06 00:00:00-07:00,1959.16,20,occasional
-4314,janice_chavez,2025-04-06 00:00:00-07:00,88.98,0,high_value
+4314,janice_chavez,2025-04-06 00:00:00-07:00,177.96,0,high_value
 4315,shannon_yates,2024-04-27 00:00:00-07:00,3367.71,34,frequent
 4316,kenneth_johnson,2025-01-14 00:00:00-08:00,4329.68,16,frequent
 4317,mark_whitney,2024-05-08 00:00:00-07:00,4443.87,12,frequent
@@ -4333,7 +4333,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 4332,mark_lopez,2024-05-07 00:00:00-07:00,848.97,14,high_value
 4333,casey_flynn,2024-08-31 00:00:00-07:00,2688.95,44,occasional
 4334,james_simon,2024-05-30 00:00:00-07:00,4437.24,12,occasional
-4335,sarah_howell,2024-05-15 00:00:00-07:00,162.89000000000001,15,frequent
+4335,sarah_howell,2024-05-15 00:00:00-07:00,162.89,15,frequent
 4336,kristine_hess,2025-06-14 00:00:00-07:00,2466.12,45,high_value
 4337,tracy_torres,2025-01-31 00:00:00-08:00,868.44,10,high_value
 4338,timothy_williams,2024-11-04 00:00:00-08:00,4160.49,29,occasional
@@ -4432,7 +4432,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 4431,leah_booker,2023-08-20 00:00:00-07:00,111.88,30,high_value
 4432,erik_mcdonald,2025-05-05 00:00:00-07:00,242.16,45,high_value
 4433,nicholas_tucker,2025-01-07 00:00:00-08:00,2496.02,28,occasional
-4434,brittany_price,2025-05-19 00:00:00-07:00,45.85,10,occasional
+4434,brittany_price,2025-05-19 00:00:00-07:00,91.7,10,occasional
 4435,ashley_walter,2024-01-09 00:00:00-08:00,1396.59,9,high_value
 4436,nathaniel_parker,2023-09-07 00:00:00-07:00,753.3,1,occasional
 4437,mark_cordova,2025-05-06 00:00:00-07:00,1864.09,10,occasional
@@ -4504,7 +4504,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 4503,jon_roberts,2023-11-02 00:00:00-07:00,3743.81,46,high_value
 4504,garrett_brown,2024-01-21 00:00:00-08:00,214.36,27,occasional
 4505,anna_wilson,2024-11-30 00:00:00-08:00,3550.26,38,occasional
-4506,frank_carroll,2024-10-04 00:00:00-07:00,359.94,29,high_value
+4506,frank_carroll,2024-10-04 00:00:00-07:00,230.92,29,high_value
 4507,jermaine_carey,2024-06-18 00:00:00-07:00,3944.33,41,high_value
 4508,jeffery_monroe,2023-12-12 00:00:00-08:00,2064.97,11,high_value
 4509,maria_reeves,2024-12-01 00:00:00-08:00,1905.25,25,high_value
@@ -4592,11 +4592,11 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 4591,stephen_rodriguez,2024-10-19 00:00:00-07:00,1535.06,9,high_value
 4592,debra_bauer,2023-09-29 00:00:00-07:00,3810.42,15,occasional
 4593,jesse_walters,2024-07-18 00:00:00-07:00,4197.71,12,high_value
-4594,sharon_jensen_dvm,2024-02-08 00:00:00-08:00,923.5699999999999,46,frequent
+4594,sharon_jensen_dvm,2024-02-08 00:00:00-08:00,923.57,46,frequent
 4595,travis_johnson,2024-03-15 00:00:00-07:00,4066.48,3,frequent
 4596,kevin_thornton,2025-01-08 00:00:00-08:00,1753.03,27,high_value
 4597,lawrence_jackson,2024-12-27 00:00:00-08:00,3953.2,36,occasional
-4598,mark_wolfe,2024-04-08 00:00:00-07:00,147.09,35,frequent
+4598,mark_wolfe,2024-04-08 00:00:00-07:00,175.01,35,frequent
 4599,james_rasmussen,2024-09-09 00:00:00-07:00,4018.28,26,frequent
 4600,kim_spence,2025-01-22 00:00:00-08:00,4182.42,16,high_value
 4601,christina_johnson,2024-08-23 00:00:00-07:00,4425.42,33,frequent
@@ -4756,7 +4756,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 4755,briana_robles,2024-05-13 00:00:00-07:00,398.63,25,high_value
 4756,robert_tanner,2024-10-08 00:00:00-07:00,4917.13,3,frequent
 4757,antonio_torres,2023-09-06 00:00:00-07:00,4721.94,0,occasional
-4758,gregory_cohen,2025-03-01 00:00:00-08:00,295.61,29,frequent
+4758,gregory_cohen,2025-03-01 00:00:00-08:00,420.25,29,frequent
 4759,timothy_ellis,2024-11-08 00:00:00-08:00,3778.11,41,high_value
 4760,mr_andrew_young,2024-10-22 00:00:00-07:00,1417.65,9,frequent
 4761,christy_hoffman,2024-06-01 00:00:00-07:00,1935.37,3,high_value
@@ -4809,7 +4809,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 4808,kyle_phelps_md,2025-01-10 00:00:00-08:00,2778.53,49,occasional
 4809,emily_lane,2023-10-12 00:00:00-07:00,1408.25,9,high_value
 4810,eric_mcclain,2025-04-07 00:00:00-07:00,1922.66,19,occasional
-4811,sherry_ryan_md,2025-01-09 00:00:00-08:00,331.11,12,occasional
+4811,sherry_ryan_md,2025-01-09 00:00:00-08:00,171.63,12,occasional
 4812,theresa_arnold,2024-07-18 00:00:00-07:00,4952.58,46,frequent
 4813,andrew_diaz,2024-03-27 00:00:00-07:00,4539.88,37,high_value
 4814,adam_larson,2024-01-17 00:00:00-08:00,4595.14,3,high_value
@@ -4882,7 +4882,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 4881,david_parker,2025-06-14 00:00:00-07:00,3730.03,42,high_value
 4882,matthew_lin,2025-04-29 00:00:00-07:00,3684.32,10,high_value
 4883,ronald_woods_dds,2025-01-26 00:00:00-08:00,354.44,7,occasional
-4884,mrs_rebecca_hines,2024-01-27 00:00:00-08:00,100.07,31,high_value
+4884,mrs_rebecca_hines,2024-01-27 00:00:00-08:00,305.65,31,high_value
 4885,russell_matthews,2023-09-04 00:00:00-07:00,4098.09,49,high_value
 4886,kayla_callahan,2024-03-17 00:00:00-07:00,2450.94,39,high_value
 4887,brandon_jones,2024-06-21 00:00:00-07:00,2142.38,42,occasional
@@ -4929,7 +4929,7 @@ customer_id,customer_name,join_date,total_spent,frequency,segment
 4928,ashley_kaiser,2023-12-24 00:00:00-08:00,1974.17,31,high_value
 4929,jessica_ali_dvm,2025-03-12 00:00:00-07:00,3536.6,48,frequent
 4930,christopher_lopez,2024-03-18 00:00:00-07:00,557.76,13,high_value
-4931,martha_garcia,2025-04-24 00:00:00-07:00,282.05,21,high_value
+4931,martha_garcia,2025-04-24 00:00:00-07:00,356.81,21,high_value
 4932,ashley_ross,2024-11-12 00:00:00-08:00,915.71,7,high_value
 4933,brian_wilson,2024-09-15 00:00:00-07:00,2790.32,49,high_value
 4934,dylan_ritter,2024-07-30 00:00:00-07:00,4202.19,34,frequent
